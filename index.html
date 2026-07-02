@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sebastian Isaksen — Operations Executive · DC · Maryland · Virginia</title>
+<meta name="description" content="Sebastian Isaksen — operations and business leader in the Washington DC metro. COO-level experience across creative services and professional services.">
+<meta name="theme-color" content="#0F1B2D">
+<style>
+  :root{
+    --bg:#0F1B2D; --bg2:#152538; --card:#1A2C42; --ink:#EAF1F8; --mut:#93A7BD;
+    --accent:#3DA9C4; --accent2:#F2B441; --line:#26384F;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Segoe UI',-apple-system,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.6;}
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px;}
+  /* Nav */
+  nav{position:sticky; top:0; background:rgba(15,27,45,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); z-index:10;}
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:60px;}
+  nav .brand{font-weight:800; letter-spacing:.5px; font-size:17px;}
+  nav .brand span{color:var(--accent);}
+  nav ul{display:flex; gap:26px; list-style:none;}
+  nav ul a{color:var(--mut); font-size:14px; font-weight:600;}
+  nav ul a:hover{color:var(--ink); text-decoration:none;}
+  @media(max-width:640px){ nav ul{display:none;} }
+  /* Hero */
+  header.hero{padding:90px 0 70px; background:radial-gradient(1200px 400px at 70% -10%, rgba(61,169,196,.16), transparent), var(--bg);}
+  .eyebrow{color:var(--accent2); font-weight:700; letter-spacing:2px; font-size:13px; text-transform:uppercase;}
+  h1{font-size:52px; line-height:1.1; margin:14px 0 10px; font-weight:800;}
+  h1 em{font-style:normal; color:var(--accent);}
+  .lede{font-size:20px; color:var(--mut); max-width:640px; margin-bottom:26px;}
+  .cta{display:inline-flex; gap:12px; flex-wrap:wrap;}
+  .btn{display:inline-block; padding:13px 22px; border-radius:10px; font-weight:700; font-size:15px;}
+  .btn-primary{background:var(--accent); color:#04222A;}
+  .btn-primary:hover{text-decoration:none; filter:brightness(1.08);}
+  .btn-ghost{border:1px solid var(--line); color:var(--ink);}
+  .btn-ghost:hover{text-decoration:none; border-color:var(--accent);}
+  /* Sections */
+  section{padding:56px 0; border-top:1px solid var(--line);}
+  .kicker{color:var(--accent); font-weight:700; letter-spacing:2px; font-size:12px; text-transform:uppercase; margin-bottom:8px;}
+  h2{font-size:30px; font-weight:800; margin-bottom:22px;}
+  h3{font-size:19px; font-weight:700;}
+  p.section-lead{color:var(--mut); max-width:680px; margin-bottom:28px; font-size:17px;}
+  /* Stat row */
+  .stats{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:30px;}
+  @media(max-width:640px){ .stats{grid-template-columns:repeat(2,1fr);} h1{font-size:38px;} }
+  .stat{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px; text-align:center;}
+  .stat b{display:block; font-size:30px; color:var(--accent2);}
+  .stat span{font-size:12px; color:var(--mut); letter-spacing:1px; text-transform:uppercase;}
+  /* Experience */
+  .exp{display:flex; gap:20px; padding:22px; background:var(--card); border:1px solid var(--line); border-radius:14px; margin-bottom:16px;}
+  .exp .side{flex:none; width:130px; color:var(--mut); font-size:13px; font-weight:600;}
+  .exp .body h3{margin-bottom:2px;}
+  .exp .role{color:var(--accent); font-weight:600; font-size:14px; margin-bottom:8px;}
+  .exp ul{margin:8px 0 0 18px; color:var(--mut);}
+  .exp li{margin-bottom:4px;}
+  .tag{display:inline-block; background:rgba(61,169,196,.12); color:var(--accent); border:1px solid var(--line); border-radius:999px; padding:3px 11px; font-size:12px; font-weight:600; margin:3px 4px 0 0;}
+  @media(max-width:640px){ .exp{flex-direction:column; gap:6px;} .exp .side{width:auto;} }
+  /* Skills grid */
+  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  @media(max-width:640px){ .grid3{grid-template-columns:1fr;} }
+  .skillcard{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px;}
+  .skillcard h3{color:var(--accent2); font-size:16px; margin-bottom:10px;}
+  .skillcard p{color:var(--mut); font-size:14px;}
+  /* Contact */
+  .contact-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:8px;}
+  @media(max-width:640px){ .contact-grid{grid-template-columns:1fr;} }
+  .contact-card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px; text-align:center;}
+  .contact-card .lbl{font-size:12px; color:var(--mut); letter-spacing:1px; text-transform:uppercase; margin-bottom:6px;}
+  .contact-card a, .contact-card span{font-size:16px; font-weight:600; color:var(--ink);}
+  footer{padding:40px 0; text-align:center; color:var(--mut); font-size:13px; border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Sebastian <span>Isaksen</span></div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Capabilities</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Operations &amp; Business Leadership · Washington DC Metro</div>
+    <h1>I build the <em>systems</em> that let businesses grow.</h1>
+    <p class="lede">Operations executive with COO-level experience across creative and professional services — turning scrappy operations into repeatable, measurable, scalable systems.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#contact">Get in touch</a>
+      <a class="btn btn-ghost" href="#experience">See experience</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>COO</b><span>Operations Lead</span></div>
+      <div class="stat"><b>DMV</b><span>DC · MD · VA</span></div>
+      <div class="stat"><b>2</b><span>Companies Led</span></div>
+      <div class="stat"><b>16+ yr</b><span>Business Ops</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="kicker">About</div>
+    <h2>Operations that scale, teams that deliver.</h2>
+    <p class="section-lead">Based in Silver Spring, Maryland, I lead operations for growing businesses across the Washington DC metro. My work sits where strategy meets execution: standing up the processes, tools, and team structures that turn a good idea into a business that runs — and keeps running when volume climbs. I move comfortably between the numbers (budgets, unit economics, forecasting) and the people (hiring, training, culture), because operations only works when both hold.</p>
+    <div>
+      <span class="tag">Operations Leadership</span>
+      <span class="tag">Process Design</span>
+      <span class="tag">Team Building</span>
+      <span class="tag">Financial Modeling</span>
+      <span class="tag">Vendor &amp; Partner Management</span>
+      <span class="tag">Project Management</span>
+      <span class="tag">Go-to-Market</span>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="kicker">Experience</div>
+    <h2>Where I've led.</h2>
+
+    <div class="exp">
+      <div class="side">Current<br>Washington DC Metro</div>
+      <div class="body">
+        <h3>Samshots — Photo &amp; Video</h3>
+        <div class="role">COO / Operations Lead</div>
+        <ul>
+          <li>Run day-to-day operations for an award-winning DMV wedding &amp; portrait studio serving 700+ couples.</li>
+          <li>Own booking-to-delivery workflow, team scheduling, and the systems that keep delivery on a guaranteed timeline.</li>
+          <li>Lead marketing operations, web presence, and vendor/venue partnerships across DC, Maryland, and Virginia.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp">
+      <div class="side">Prior<br>Maryland</div>
+      <div class="body">
+        <h3>IPS — Legal &amp; Paralegal Services</h3>
+        <div class="role">Chief Operating Officer</div>
+        <ul>
+          <li>Directed operations for a legal/paralegal services company, standardizing intake, casework, and delivery processes.</li>
+          <li>Built and managed cross-functional teams and the reporting structures behind them.</li>
+          <li>Partnered with executive leadership on financial planning and organizational strategy.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp">
+      <div class="side">Selected<br>Ventures</div>
+      <div class="body">
+        <h3>Independent Operations &amp; Media Projects</h3>
+        <div class="role">Founder / Operator</div>
+        <ul>
+          <li>Launched and operated video production and live-streaming services — 4K delivery, multi-camera live events, and post workflows.</li>
+          <li>Developed early-stage concepts spanning public-safety programs and productivity tooling, from research and cost modeling through pitch and prototype.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="kicker">Capabilities</div>
+    <h2>What I bring to the table.</h2>
+    <div class="grid3">
+      <div class="skillcard">
+        <h3>Operations &amp; Strategy</h3>
+        <p>Process design, SOPs, workflow automation, capacity planning, and the org structures that let a business scale without breaking.</p>
+      </div>
+      <div class="skillcard">
+        <h3>Finance &amp; Analysis</h3>
+        <p>Budgeting, unit economics, forecasting, pricing analysis, and cost-benefit modeling to support real decisions.</p>
+      </div>
+      <div class="skillcard">
+        <h3>Team &amp; People</h3>
+        <p>Hiring, onboarding, training, and building teams that stay — with communication that keeps everyone rowing the same direction.</p>
+      </div>
+      <div class="skillcard">
+        <h3>Marketing &amp; Growth</h3>
+        <p>Brand presence, content and social strategy, web and funnel operations, and partner/venue relationship management.</p>
+      </div>
+      <div class="skillcard">
+        <h3>Media Production</h3>
+        <p>4K video delivery, live streaming, multi-camera events, audio, and editing workflows in professional post pipelines.</p>
+      </div>
+      <div class="skillcard">
+        <h3>Product &amp; Tech</h3>
+        <p>From concept research to prototype — requirements, cost models, and working demos for new products and programs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="kicker">Contact</div>
+    <h2>Let's talk.</h2>
+    <p class="section-lead">Open to operations leadership, consulting, and partnership conversations across the DC / Maryland / Virginia region.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="lbl">Email</div>
+        <a href="mailto:skisaksen@gmail.com">skisaksen@gmail.com</a>
+      </div>
+      <div class="contact-card">
+        <div class="lbl">Phone</div>
+        <a href="tel:2409884450">240-988-4450</a>
+      </div>
+      <div class="contact-card">
+        <div class="lbl">Location</div>
+        <span>Silver Spring, MD</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="yr"></span> Sebastian Isaksen · Washington DC · Maryland · Virginia
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
