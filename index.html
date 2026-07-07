@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sebastian Isaksen — Engineer of Systems · Ex-Northrop Grumman @ FAA · COO</title>
-<meta name="description" content="Sebastian Isaksen — UMD electrical engineer hired straight into Northrop Grumman on the FAA mission. Systems engineer, two-time COO, and unreasonably social human in the Washington DC metro.">
+<meta name="description" content="Sebastian Isaksen — UMD electrical engineer hired straight into Northrop Grumman on the FAA mission. Systems engineer, COO, and unreasonably social human in the Washington DC metro.">
 <meta name="theme-color" content="#05070d">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -223,7 +223,7 @@ footer .mono{color:var(--cyan)}
   <div class="wrap heroInner" id="heroInner">
     <div class="eyebrow">UMD Engineer · Ex-Northrop Grumman @ the FAA · Silver Spring, MD</div>
     <h1>Hi, I'm Sebastian.<br>I'm <span id="type"></span></h1>
-    <p class="lede">Electrical engineer out of Maryland's Clark School — <b>hired straight out of school by Northrop Grumman</b> to work systems engineering on the <b>FAA's national airspace mission</b>. Now a two-time COO who builds the machines behind businesses, while being the most talkative person in the room. Both are load-bearing.</p>
+    <p class="lede">Electrical engineer out of Maryland's Clark School — <b>hired straight out of school by Northrop Grumman</b> to work systems engineering on the <b>FAA's national airspace mission</b>. Now a COO who builds the machines behind businesses, while being the most talkative person in the room. Both are load-bearing.</p>
     <div class="cta">
       <a class="btn btn-p" href="#contact">Let's talk →</a>
       <a class="btn btn-g" href="#origin">The origin story</a>
@@ -232,7 +232,7 @@ footer .mono{color:var(--cyan)}
     <div class="stats">
       <div class="stat"><b data-n="16" data-suf="+">0</b><span>Years Eng + Ops</span></div>
       <div class="stat"><b data-n="2.2" data-dec="1" data-pre="$" data-suf="M">0</b><span>Certified Cost Savings</span></div>
-      <div class="stat"><b data-n="2" data-suf="×">0</b><span>Chief Operating Officer</span></div>
+      <div class="stat"><b data-n="2007">0</b><span>UMD EE, Class Of</span></div>
       <div class="stat"><b data-n="5">0</b><span>CMMI Maturity Level</span></div>
     </div>
   </div>
@@ -282,7 +282,7 @@ footer .mono{color:var(--cyan)}
     <p class="lead rv">Most people pick a lane. I run three in parallel, and the trick is that each one makes the others better.</p>
     <div class="trio">
       <div class="id rv tilt"><div class="ico">⚙️</div><h3>The Engineer</h3><p>Degreed EE, forged on the FAA mission at Northrop Grumman: requirements, system synthesis, design tradeoffs, risk analysis. These days I build demand models, dashboards, prototypes, and pipelines — if it has moving parts and a failure mode, I want to design it.</p><div class="bar"></div></div>
-      <div class="id rv tilt"><div class="ico">📈</div><h3>The COO</h3><p>Two companies operated at the executive level. Budgets, forecasting, EVM metrics, hiring, vendor contracts, SOPs — the unglamorous machinery that decides whether a business survives contact with growth. I read the fine print and enjoy it.</p><div class="bar"></div></div>
+      <div class="id rv tilt"><div class="ico">📈</div><h3>The COO</h3><p>Company operations at the executive level: budgets, forecasting, EVM metrics, hiring, vendor contracts, SOPs — the unglamorous machinery that decides whether a business survives contact with growth. I read the fine print and enjoy it.</p><div class="bar"></div></div>
       <div class="id rv tilt"><div class="ico">🗣️</div><h3>The Human</h3><p>Gregarious is the polite word. I build partnerships with venues, teams, vendors, and government offices because I genuinely like people — and systems only work when both the spreadsheet AND the relationship hold.</p><div class="bar"></div></div>
     </div>
   </div>
@@ -400,7 +400,7 @@ addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.c
 document.querySelectorAll('a,button,.redact,.aw').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('hot'));el.addEventListener('mouseleave',()=>cur.classList.remove('hot'));});
 
 /* ---------- typewriter ---------- */
-const roles=["an engineer.","an electrical engineer (UMD '07).","an FAA-mission systems guy.","a COO. twice.","the guy who knows everyone.","a live-video nerd.","building something secret.","probably free for coffee."];
+const roles=["an engineer.","an electrical engineer (UMD '07).","an FAA-mission systems guy.","a COO.","the guy who knows everyone.","a live-video nerd.","building something secret.","probably free for coffee."];
 const T=document.getElementById('type');let ri=0,ci=0,del=false;
 (function tick(){
   const w=roles[ri];
@@ -513,7 +513,7 @@ function drawChart(){
   for(const c of craft){
     c.h+= (Math.random()-.5)*.012;
     const dm=Math.hypot(c.x-mX,c.y-mY);
-    if(dm<120){c.h+=.05*Math.sign((c.x-mX)*Math.sin(c.h)-(c.y-mY)*Math.cos(c.h)||1);}
+    if(dm<120){c.h+=.0025*Math.sign((c.x-mX)*Math.sin(c.h)-(c.y-mY)*Math.cos(c.h)||1);}
     c.x+=Math.cos(c.h)*c.spd;c.y+=Math.sin(c.h)*c.spd;
     if(c.x<-40)c.x=W+40;if(c.x>W+40)c.x=-40;if(c.y<-40)c.y=H+40;if(c.y>H+40)c.y=-40;
     c.trail.push([c.x,c.y]);if(c.trail.length>26)c.trail.shift();
@@ -568,7 +568,7 @@ function toggleTerm(){term.classList.toggle('open');if(term.classList.contains('
 addEventListener('keydown',e=>{if(e.key==='`'&&document.activeElement!==tin){e.preventDefault();toggleTerm();}});
 const CMDS={
   help:"commands: whoami · faa · edu · work · awards · stealth · coffee · skills · social · konami · clear · exit",
-  whoami:"Sebastian 'Sebbie' Isaksen — electrical engineer (UMD '07),\nex-Northrop Grumman on the FAA mission, COO ×2,\nprofessional extrovert. Silver Spring, MD. Runs on coffee.",
+  whoami:"Sebastian 'Sebbie' Isaksen — electrical engineer (UMD '07),\nex-Northrop Grumman on the FAA mission, COO,\nprofessional extrovert. Silver Spring, MD. Runs on coffee.",
   faa:"2008: hired straight out of UMD Clark Engineering by\nNorthrop Grumman (→ TASC). Systems engineering on the\nFAA's national airspace: requirements, design tradeoffs,\nCOTS, DoDAF, risk. Certified $2.2M cost savings.\nFAA Certificate of Appreciation, 2010. ✈",
   edu:"B.S. Electrical Engineering — Univ. of Maryland,\nA. James Clark School of Engineering ('07)\nA.S. EE — Montgomery College ('05)\ncoursework: optics, wireless, power electronics,\nneural networks (before it was cool)",
   work:"2008→  Northrop Grumman/TASC — FAA mission (systems eng)\nTHEN   Intrepid Paralegal Solutions (COO) — EVM-driven ops\nNOW    operations leadership + independent ventures\nALWAYS media production, prototypes, cost models",
