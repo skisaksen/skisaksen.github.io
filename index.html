@@ -281,7 +281,7 @@ footer .mono{color:var(--cyan)}
     <h2 class="rv">One person. Three job descriptions.</h2>
     <p class="lead rv">Most people pick a lane. I run three in parallel, and the trick is that each one makes the others better.</p>
     <div class="trio">
-      <div class="id rv tilt"><div class="ico">⚙️</div><h3>The Engineer</h3><p>Degreed EE, forged on the FAA mission at Northrop Grumman: requirements, system synthesis, design tradeoffs, risk analysis. These days I build booking pipelines, demand models, prototypes, and this site — hand-coded, zero frameworks, view-source friendly.</p><div class="bar"></div></div>
+      <div class="id rv tilt"><div class="ico">⚙️</div><h3>The Engineer</h3><p>Degreed EE, forged on the FAA mission at Northrop Grumman: requirements, system synthesis, design tradeoffs, risk analysis. These days I build demand models, dashboards, prototypes, and pipelines — if it has moving parts and a failure mode, I want to design it.</p><div class="bar"></div></div>
       <div class="id rv tilt"><div class="ico">📈</div><h3>The COO</h3><p>Two companies operated at the executive level. Budgets, forecasting, EVM metrics, hiring, vendor contracts, SOPs — the unglamorous machinery that decides whether a business survives contact with growth. I read the fine print and enjoy it.</p><div class="bar"></div></div>
       <div class="id rv tilt"><div class="ico">🗣️</div><h3>The Human</h3><p>Gregarious is the polite word. I build partnerships with venues, teams, vendors, and government offices because I genuinely like people — and systems only work when both the spreadsheet AND the relationship hold.</p><div class="bar"></div></div>
     </div>
@@ -294,18 +294,7 @@ footer .mono{color:var(--cyan)}
     <h2 class="rv">Where I've built.</h2>
     <div class="tl">
       <div class="node rv">
-        <div class="when">NOW → · WASHINGTON DC METRO</div>
-        <h3>Samshots — Photo &amp; Video</h3>
-        <div class="role">COO / Operations Lead</div>
-        <ul>
-          <li>Run operations for an award-winning DMV wedding &amp; portrait studio serving 700+ couples.</li>
-          <li>Own the booking-to-delivery machine: scheduling, workflow, guaranteed delivery timelines.</li>
-          <li>Led the website replatform (Wix → hand-built static on Netlify) and marketing operations.</li>
-        </ul>
-        <span class="tag">Ops Systems</span><span class="tag">Web Engineering</span><span class="tag">Marketing</span><span class="tag">Partnerships</span>
-      </div>
-      <div class="node rv">
-        <div class="when">PRIOR · GERMANTOWN, MD</div>
+        <div class="when">RECENT · GERMANTOWN, MD</div>
         <h3>Intrepid Paralegal Solutions</h3>
         <div class="role">Chief Operating Officer</div>
         <ul>
@@ -388,7 +377,6 @@ footer .mono{color:var(--cyan)}
 
 <footer>
   © <span id="yr"></span> Sebastian Isaksen · Silver Spring, MD ·
-  <span class="mono">hand-coded, zero frameworks</span> ·
   press <span class="mono">`</span> for the terminal · try the Konami code, I dare you
 </footer>
 
@@ -439,6 +427,55 @@ function skyInit(){
 }
 skyInit();addEventListener('resize',skyInit);
 addEventListener('mousemove',e=>{mX=e.clientX;mY=e.clientY;});
+
+/* ---- circuit layer (EE nod) ---- */
+const CIRC=[[[.05,.92],[.16,.92],[.16,.80],[.28,.80]],[[.05,.86],[.11,.86],[.11,.74],[.22,.74],[.22,.66]],[[.30,.92],[.30,.84],[.38,.84]],[[.86,.70],[.93,.70],[.93,.60],[.88,.60]]];
+let pulses=CIRC.map(()=>Math.random());
+function drawCirc(){
+  sx.lineWidth=1.2;
+  for(let k=0;k<CIRC.length;k++){
+    const P=CIRC[k].map(p=>[p[0]*W,p[1]*H]);
+    sx.strokeStyle='rgba(74,222,128,.13)';
+    sx.beginPath();sx.moveTo(P[0][0],P[0][1]);for(let i=1;i<P.length;i++)sx.lineTo(P[i][0],P[i][1]);sx.stroke();
+    for(const p of P){sx.fillStyle='rgba(74,222,128,.20)';sx.beginPath();sx.arc(p[0],p[1],2.4,0,7);sx.fill();}
+    pulses[k]=(pulses[k]+.004)%1;
+    let L=0,seg=[];
+    for(let i=1;i<P.length;i++){const d=Math.hypot(P[i][0]-P[i-1][0],P[i][1]-P[i-1][1]);seg.push(d);L+=d;}
+    let d=pulses[k]*L;
+    for(let i=1;i<P.length;i++){
+      if(d<=seg[i-1]){const t=d/seg[i-1],x=P[i-1][0]+(P[i][0]-P[i-1][0])*t,y=P[i-1][1]+(P[i][1]-P[i-1][1])*t;
+        sx.fillStyle='rgba(74,222,128,.75)';sx.beginPath();sx.arc(x,y,2.2,0,7);sx.fill();break;}
+      d-=seg[i-1];
+    }
+  }
+  const ix=W*.16,iy=H*.68,iw=56,ih=34;
+  sx.strokeStyle='rgba(74,222,128,.20)';sx.strokeRect(ix,iy,iw,ih);
+  for(let i=0;i<4;i++){
+    sx.beginPath();sx.moveTo(ix+9+i*12,iy);sx.lineTo(ix+9+i*12,iy-6);sx.stroke();
+    sx.beginPath();sx.moveTo(ix+9+i*12,iy+ih);sx.lineTo(ix+9+i*12,iy+ih+6);sx.stroke();
+  }
+  sx.fillStyle='rgba(74,222,128,.26)';sx.font='8px JetBrains Mono,monospace';sx.fillText('EE-2007',ix+8,iy+20);
+}
+
+/* ---- financial data layer (COO nod) ---- */
+let fin=[],ftick=0;
+function drawFin(){
+  if(!fin.length)fin=Array.from({length:60},(_,i)=>Math.sin(i/6)*14+Math.random()*10+20);
+  ftick++;
+  if(ftick%14===0){fin.push(Math.max(4,fin[fin.length-1]+(Math.random()-.47)*8));fin.shift();}
+  const bx=W*.60,by=H*.90,bw=W*.32;
+  sx.strokeStyle='rgba(251,191,36,.15)';sx.lineWidth=1.2;sx.beginPath();
+  fin.forEach((v,i)=>{const x=bx+i/fin.length*bw,y=by-v;i?sx.lineTo(x,y):sx.moveTo(x,y);});
+  sx.stroke();
+  for(let i=0;i<9;i++){
+    const x=bx+i*bw/9+6,o=fin[i*6]||10,c2=fin[i*6+3]||12;
+    sx.strokeStyle='rgba(251,191,36,.10)';sx.beginPath();sx.moveTo(x,by-Math.max(o,c2)-6);sx.lineTo(x,by-Math.min(o,c2)+6);sx.stroke();
+    sx.fillStyle=c2>o?'rgba(74,222,128,.15)':'rgba(244,114,182,.15)';
+    sx.fillRect(x-2.5,by-Math.max(o,c2),5,Math.abs(c2-o)+1);
+  }
+  sx.fillStyle='rgba(251,191,36,.22)';sx.font='10px JetBrains Mono,monospace';
+  sx.fillText('EVM · CPI 1.12 · SPI 1.05 · ROI ▲',bx,by+16);
+}
 function drawChart(){
   sx.clearRect(0,0,W,H);
   /* airways */
@@ -456,6 +493,7 @@ function drawChart(){
     sx.fillStyle='rgba(143,163,196,.30)';sx.font='10px JetBrains Mono,monospace';
     sx.fillText(w.n,w.x+10,w.y+4);
   }
+  drawCirc();drawFin();
   /* compass rose */
   const cxp=W*.82,cyp=H*.24,R=Math.min(W,H)*.13;
   sx.strokeStyle='rgba(34,211,238,.12)';sx.lineWidth=1;
@@ -533,7 +571,7 @@ const CMDS={
   whoami:"Sebastian 'Sebbie' Isaksen — electrical engineer (UMD '07),\nex-Northrop Grumman on the FAA mission, COO ×2,\nprofessional extrovert. Silver Spring, MD. Runs on coffee.",
   faa:"2008: hired straight out of UMD Clark Engineering by\nNorthrop Grumman (→ TASC). Systems engineering on the\nFAA's national airspace: requirements, design tradeoffs,\nCOTS, DoDAF, risk. Certified $2.2M cost savings.\nFAA Certificate of Appreciation, 2010. ✈",
   edu:"B.S. Electrical Engineering — Univ. of Maryland,\nA. James Clark School of Engineering ('07)\nA.S. EE — Montgomery College ('05)\ncoursework: optics, wireless, power electronics,\nneural networks (before it was cool)",
-  work:"2008→  Northrop Grumman/TASC — FAA mission (systems eng)\nPRIOR  Intrepid Paralegal Solutions (COO) — EVM-driven ops\nNOW    Samshots (COO) — 700+ couples, ops + web + marketing\nALWAYS media production, prototypes, cost models",
+  work:"2008→  Northrop Grumman/TASC — FAA mission (systems eng)\nTHEN   Intrepid Paralegal Solutions (COO) — EVM-driven ops\nNOW    operations leadership + independent ventures\nALWAYS media production, prototypes, cost models",
   awards:"🏅 FAA Certificate of Appreciation (2010)\n💰 $2.2M certified cost savings (2009)\n📐 CMMI Level 5 Manager Certified (2011)\n🎯 PMI-RMP training (2013)\n🛠 Systems Engineering Manager Cert (2010)",
   stealth:"ACCESS DENIED.\n...\nokay fine: public-safety program, DMV region, in stealth.\nfilings pending. that's all you get. buy me coffee and\nI'll say the same thing but with more enthusiasm.",
   coffee:"☕ protocol initiated → skisaksen@gmail.com, subject 'Coffee?'\nfirst round's on me if you're in the DC metro.",
