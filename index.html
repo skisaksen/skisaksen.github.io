@@ -3,229 +3,447 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sebastian Isaksen — Operations Executive · DC · Maryland · Virginia</title>
-<meta name="description" content="Sebastian Isaksen — operations and business leader in the Washington DC metro. COO-level experience across creative services and professional services.">
-<meta name="theme-color" content="#0F1B2D">
+<title>Sebastian Isaksen — Engineer of Operations · Builder · People Person</title>
+<meta name="description" content="Sebastian Isaksen — COO-level operator, systems builder, and unreasonably social human in the Washington DC metro. I build the machines behind businesses — and the relationships that power them.">
+<meta name="theme-color" content="#07090f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#0F1B2D; --bg2:#152538; --card:#1A2C42; --ink:#EAF1F8; --mut:#93A7BD;
-    --accent:#3DA9C4; --accent2:#F2B441; --line:#26384F;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{font-family:'Segoe UI',-apple-system,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.6;}
-  a{color:var(--accent); text-decoration:none;}
-  a:hover{text-decoration:underline;}
-  .wrap{max-width:960px; margin:0 auto; padding:0 24px;}
-  /* Nav */
-  nav{position:sticky; top:0; background:rgba(15,27,45,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); z-index:10;}
-  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:60px;}
-  nav .brand{font-weight:800; letter-spacing:.5px; font-size:17px;}
-  nav .brand span{color:var(--accent);}
-  nav ul{display:flex; gap:26px; list-style:none;}
-  nav ul a{color:var(--mut); font-size:14px; font-weight:600;}
-  nav ul a:hover{color:var(--ink); text-decoration:none;}
-  @media(max-width:640px){ nav ul{display:none;} }
-  /* Hero */
-  header.hero{padding:90px 0 70px; background:radial-gradient(1200px 400px at 70% -10%, rgba(61,169,196,.16), transparent), var(--bg);}
-  .eyebrow{color:var(--accent2); font-weight:700; letter-spacing:2px; font-size:13px; text-transform:uppercase;}
-  h1{font-size:52px; line-height:1.1; margin:14px 0 10px; font-weight:800;}
-  h1 em{font-style:normal; color:var(--accent);}
-  .lede{font-size:20px; color:var(--mut); max-width:640px; margin-bottom:26px;}
-  .cta{display:inline-flex; gap:12px; flex-wrap:wrap;}
-  .btn{display:inline-block; padding:13px 22px; border-radius:10px; font-weight:700; font-size:15px;}
-  .btn-primary{background:var(--accent); color:#04222A;}
-  .btn-primary:hover{text-decoration:none; filter:brightness(1.08);}
-  .btn-ghost{border:1px solid var(--line); color:var(--ink);}
-  .btn-ghost:hover{text-decoration:none; border-color:var(--accent);}
-  /* Sections */
-  section{padding:56px 0; border-top:1px solid var(--line);}
-  .kicker{color:var(--accent); font-weight:700; letter-spacing:2px; font-size:12px; text-transform:uppercase; margin-bottom:8px;}
-  h2{font-size:30px; font-weight:800; margin-bottom:22px;}
-  h3{font-size:19px; font-weight:700;}
-  p.section-lead{color:var(--mut); max-width:680px; margin-bottom:28px; font-size:17px;}
-  /* Stat row */
-  .stats{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:30px;}
-  @media(max-width:640px){ .stats{grid-template-columns:repeat(2,1fr);} h1{font-size:38px;} }
-  .stat{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px; text-align:center;}
-  .stat b{display:block; font-size:30px; color:var(--accent2);}
-  .stat span{font-size:12px; color:var(--mut); letter-spacing:1px; text-transform:uppercase;}
-  /* Experience */
-  .exp{display:flex; gap:20px; padding:22px; background:var(--card); border:1px solid var(--line); border-radius:14px; margin-bottom:16px;}
-  .exp .side{flex:none; width:130px; color:var(--mut); font-size:13px; font-weight:600;}
-  .exp .body h3{margin-bottom:2px;}
-  .exp .role{color:var(--accent); font-weight:600; font-size:14px; margin-bottom:8px;}
-  .exp ul{margin:8px 0 0 18px; color:var(--mut);}
-  .exp li{margin-bottom:4px;}
-  .tag{display:inline-block; background:rgba(61,169,196,.12); color:var(--accent); border:1px solid var(--line); border-radius:999px; padding:3px 11px; font-size:12px; font-weight:600; margin:3px 4px 0 0;}
-  @media(max-width:640px){ .exp{flex-direction:column; gap:6px;} .exp .side{width:auto;} }
-  /* Skills grid */
-  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
-  @media(max-width:640px){ .grid3{grid-template-columns:1fr;} }
-  .skillcard{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px;}
-  .skillcard h3{color:var(--accent2); font-size:16px; margin-bottom:10px;}
-  .skillcard p{color:var(--mut); font-size:14px;}
-  /* Contact */
-  .contact-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:8px;}
-  @media(max-width:640px){ .contact-grid{grid-template-columns:1fr;} }
-  .contact-card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px; text-align:center;}
-  .contact-card .lbl{font-size:12px; color:var(--mut); letter-spacing:1px; text-transform:uppercase; margin-bottom:6px;}
-  .contact-card a, .contact-card span{font-size:16px; font-weight:600; color:var(--ink);}
-  footer{padding:40px 0; text-align:center; color:var(--mut); font-size:13px; border-top:1px solid var(--line);}
+:root{
+  --bg:#07090f; --bg2:#0b0f1a; --card:#0f1524; --line:#1c2740;
+  --ink:#e8eefb; --mut:#8fa3c4; --cyan:#22d3ee; --amber:#fbbf24; --mag:#f472b6;
+  --glow:0 0 24px rgba(34,211,238,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden}
+::selection{background:var(--cyan);color:#03242c}
+a{color:var(--cyan);text-decoration:none}
+.mono{font-family:'JetBrains Mono',monospace}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* progress bar */
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--cyan),var(--mag),var(--amber));z-index:99;box-shadow:var(--glow)}
+
+/* custom cursor */
+#cur{position:fixed;width:22px;height:22px;border:2px solid var(--cyan);border-radius:50%;pointer-events:none;z-index:98;transform:translate(-50%,-50%);transition:width .2s,height .2s,border-color .2s;mix-blend-mode:screen}
+#cur.hot{width:52px;height:52px;border-color:var(--amber)}
+@media(hover:none){#cur{display:none}}
+
+/* nav */
+nav{position:fixed;top:3px;left:0;right:0;z-index:50;background:rgba(7,9,15,.72);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{font-weight:700;letter-spacing:.5px}
+.brand b{color:var(--cyan)}
+.brand .dot{color:var(--mag)}
+nav ul{display:flex;gap:24px;list-style:none;align-items:center}
+nav ul a{color:var(--mut);font-size:14px;font-weight:600;transition:color .2s}
+nav ul a:hover{color:var(--cyan)}
+.termbtn{border:1px solid var(--line);border-radius:8px;padding:5px 12px;font-size:13px;color:var(--amber);cursor:pointer;background:none;font-family:'JetBrains Mono',monospace}
+.termbtn:hover{border-color:var(--amber);box-shadow:0 0 14px rgba(251,180,36,.25)}
+@media(max-width:700px){nav ul li.hideM{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:120px 0 80px}
+#net{position:absolute;inset:0;z-index:0}
+.hero .wrap{position:relative;z-index:2}
+.eyebrow{color:var(--amber);letter-spacing:3px;font-size:13px;text-transform:uppercase;font-weight:600}
+.eyebrow::before{content:"● ";color:var(--mag)}
+h1{font-size:clamp(40px,7vw,76px);line-height:1.05;font-weight:700;margin:18px 0 8px}
+h1 .grad{background:linear-gradient(90deg,var(--cyan),var(--mag));-webkit-background-clip:text;background-clip:text;color:transparent}
+#type{color:var(--cyan);border-right:3px solid var(--amber);padding-right:4px;white-space:nowrap}
+.lede{font-size:clamp(16px,2.2vw,21px);color:var(--mut);max-width:640px;margin:18px 0 30px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:14px 26px;border-radius:12px;font-weight:700;font-size:15px;transition:transform .15s,box-shadow .2s;display:inline-block}
+.btn:active{transform:scale(.97)}
+.btn-p{background:linear-gradient(90deg,var(--cyan),#4ade80);color:#03242c}
+.btn-p:hover{box-shadow:var(--glow);transform:translateY(-2px)}
+.btn-g{border:1px solid var(--line);color:var(--ink)}
+.btn-g:hover{border-color:var(--mag);box-shadow:0 0 18px rgba(244,114,182,.25);transform:translateY(-2px)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px;max-width:720px}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:rgba(15,21,36,.7);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center;backdrop-filter:blur(6px)}
+.stat b{display:block;font-size:30px;color:var(--amber);font-family:'JetBrains Mono',monospace}
+.stat span{font-size:11px;color:var(--mut);letter-spacing:1.5px;text-transform:uppercase}
+.scrolldown{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:var(--mut);font-size:22px;animation:bob 1.6s infinite;z-index:2}
+@keyframes bob{50%{transform:translate(-50%,8px)}}
+
+/* marquee */
+.marq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--bg2);padding:14px 0;white-space:nowrap}
+.marq-in{display:inline-block;animation:slide 30s linear infinite}
+.marq span{margin:0 26px;color:var(--mut);font-size:14px;font-family:'JetBrains Mono',monospace}
+.marq span b{color:var(--cyan);font-weight:400}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:96px 0;position:relative}
+.kick{color:var(--cyan);letter-spacing:3px;font-size:12px;text-transform:uppercase;font-weight:700;font-family:'JetBrains Mono',monospace}
+.kick::before{content:"// "}
+h2{font-size:clamp(28px,4vw,42px);font-weight:700;margin:10px 0 18px}
+.lead{color:var(--mut);max-width:700px;font-size:17px;margin-bottom:40px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+
+/* identity cards */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:820px){.trio{grid-template-columns:1fr}}
+.id{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;transition:transform .18s ease,box-shadow .25s;transform-style:preserve-3d;position:relative;overflow:hidden}
+.id::after{content:"";position:absolute;inset:0;background:radial-gradient(400px 200px at var(--mx,50%) var(--my,0%),rgba(34,211,238,.10),transparent);pointer-events:none}
+.id h3{font-size:21px;margin:10px 0 8px}
+.id .ico{font-size:34px}
+.id p{color:var(--mut);font-size:15px}
+.id .bar{height:3px;width:44px;border-radius:3px;margin-top:16px}
+.id:nth-child(1) .bar{background:var(--cyan)}.id:nth-child(2) .bar{background:var(--amber)}.id:nth-child(3) .bar{background:var(--mag)}
+.id:hover{box-shadow:0 18px 46px rgba(0,0,0,.5),var(--glow)}
+
+/* timeline */
+.tl{position:relative;margin-left:16px;padding-left:34px;border-left:2px solid var(--line)}
+.tl .node{position:relative;margin-bottom:38px}
+.tl .node::before{content:"";position:absolute;left:-43px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--cyan);box-shadow:var(--glow)}
+.tl .when{color:var(--amber);font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:1px}
+.tl h3{font-size:22px;margin:4px 0 2px}
+.tl .role{color:var(--cyan);font-weight:600;font-size:14px;margin-bottom:8px}
+.tl ul{margin:6px 0 10px 18px;color:var(--mut);font-size:15px}
+.tl li{margin-bottom:4px}
+.tag{display:inline-block;background:rgba(34,211,238,.08);color:var(--cyan);border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:600;margin:4px 5px 0 0}
+
+/* stealth */
+.stealth{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.classified{max-width:760px;margin:0 auto;background:var(--card);border:1px dashed var(--amber);border-radius:18px;padding:34px;position:relative;overflow:hidden}
+.classified .stamp{position:absolute;top:18px;right:-42px;background:var(--mag);color:#2b0518;font-weight:700;font-size:12px;letter-spacing:3px;padding:6px 56px;transform:rotate(35deg)}
+.redact{display:inline-block;background:var(--ink);color:var(--ink);border-radius:4px;padding:0 6px;cursor:not-allowed;transition:all .2s;user-select:none}
+.redact:hover{background:var(--mag);color:#2b0518;content:"nice try"}
+.classified h3{font-size:24px;margin-bottom:10px}
+.classified p{color:var(--mut);font-size:16px;margin-bottom:10px}
+.blink{animation:blink 1.2s steps(1) infinite;color:var(--amber)}
+@keyframes blink{50%{opacity:0}}
+
+/* social */
+.fun{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(max-width:820px){.fun{grid-template-columns:1fr}}
+.funcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .18s,box-shadow .25s}
+.funcard:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.funcard h3{font-size:18px;margin-bottom:8px}
+.funcard h3 .e{margin-right:8px}
+.funcard p{color:var(--mut);font-size:15px}
+.coffee{margin-top:44px;text-align:center;background:linear-gradient(135deg,rgba(34,211,238,.08),rgba(244,114,182,.08));border:1px solid var(--line);border-radius:22px;padding:44px 26px}
+.coffee h3{font-size:clamp(22px,3.4vw,32px);margin-bottom:10px}
+.coffee p{color:var(--mut);max-width:560px;margin:0 auto 22px}
+
+/* contact */
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:700px){.cgrid{grid-template-columns:1fr}}
+.ccard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;text-align:center;transition:border-color .2s,box-shadow .2s}
+.ccard:hover{border-color:var(--cyan);box-shadow:var(--glow)}
+.ccard .l{font-size:11px;color:var(--mut);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.ccard a,.ccard span{font-size:17px;font-weight:600;color:var(--ink)}
+
+footer{padding:44px 0;text-align:center;color:var(--mut);font-size:13px;border-top:1px solid var(--line)}
+footer .mono{color:var(--cyan)}
+
+/* terminal */
+#term{position:fixed;inset:auto 20px 20px auto;width:min(520px,92vw);background:#05070c;border:1px solid var(--cyan);border-radius:14px;box-shadow:var(--glow);z-index:97;display:none;overflow:hidden}
+#term.open{display:block}
+#term .bar{background:var(--card);padding:8px 14px;font-size:12px;color:var(--mut);display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace}
+#term .bar b{color:var(--amber)}
+#term .out{height:230px;overflow-y:auto;padding:12px 14px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#9fe8f5;white-space:pre-wrap}
+#term input{width:100%;background:none;border:none;border-top:1px solid var(--line);color:var(--amber);padding:11px 14px;font-family:'JetBrains Mono',monospace;font-size:13px;outline:none}
+#term .x{cursor:pointer;color:var(--mag)}
+
+/* confetti canvas */
+#party{position:fixed;inset:0;pointer-events:none;z-index:96}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
 
+<div id="prog"></div>
+<div id="cur"></div>
+<canvas id="party"></canvas>
+
 <nav>
   <div class="wrap">
-    <div class="brand">Sebastian <span>Isaksen</span></div>
+    <div class="brand mono">sebastian<b>isaksen</b><span class="dot">.dev</span></div>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Capabilities</a></li>
+      <li class="hideM"><a href="#who">Who</a></li>
+      <li class="hideM"><a href="#work">Work</a></li>
+      <li class="hideM"><a href="#stealth">Stealth</a></li>
+      <li class="hideM"><a href="#human">Human</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><button class="termbtn" onclick="toggleTerm()" title="or press the ` key">&gt;_ terminal</button></li>
     </ul>
   </div>
 </nav>
 
 <header class="hero">
+  <canvas id="net"></canvas>
   <div class="wrap">
-    <div class="eyebrow">Operations &amp; Business Leadership · Washington DC Metro</div>
-    <h1>I build the <em>systems</em> that let businesses grow.</h1>
-    <p class="lede">Operations executive with COO-level experience across creative and professional services — turning scrappy operations into repeatable, measurable, scalable systems.</p>
+    <div class="eyebrow">Silver Spring, MD · Washington DC Metro · Occasionally Sleeping</div>
+    <h1>Hi, I'm Sebastian.<br>I'm <span id="type"></span></h1>
+    <p class="lede">COO-level operator and systems builder. I engineer the machines behind businesses — booking pipelines, budgets, dashboards, teams — and I do it while being the most talkative person in the room. Both are load-bearing.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="#contact">Get in touch</a>
-      <a class="btn btn-ghost" href="#experience">See experience</a>
+      <a class="btn btn-p" href="#contact">Let's talk →</a>
+      <a class="btn btn-g" href="#work">See the work</a>
+      <a class="btn btn-g mono" href="javascript:toggleTerm()">try the terminal</a>
     </div>
     <div class="stats">
-      <div class="stat"><b>COO</b><span>Operations Lead</span></div>
-      <div class="stat"><b>DMV</b><span>DC · MD · VA</span></div>
-      <div class="stat"><b>2</b><span>Companies Led</span></div>
-      <div class="stat"><b>16+ yr</b><span>Business Ops</span></div>
+      <div class="stat"><b data-n="16" data-suf="+">0</b><span>Years in Ops</span></div>
+      <div class="stat"><b data-n="2">0</b><span>Companies as COO</span></div>
+      <div class="stat"><b data-n="700" data-suf="+">0</b><span>Couples Served (Samshots)</span></div>
+      <div class="stat"><b data-n="1">0</b><span>Stealth Venture 👀</span></div>
     </div>
   </div>
+  <div class="scrolldown">▼</div>
 </header>
 
-<section id="about">
+<div class="marq" aria-hidden="true">
+  <div class="marq-in" id="marq">
+    <span><b>currently:</b> shipping a static site to Netlify</span>
+    <span><b>modeling:</b> unit economics in spreadsheets with too many tabs</span>
+    <span><b>editing:</b> 4K multicam in Premiere</span>
+    <span><b>reading:</b> county budget PDFs for fun (really)</span>
+    <span><b>talking to:</b> literally anyone — bartenders, councilmembers, your mom</span>
+    <span><b>building:</b> something I legally can't tell you about yet</span>
+    <span><b>drinking:</b> coffee, and offering you one</span>
+  </div>
+</div>
+
+<section id="who">
   <div class="wrap">
-    <div class="kicker">About</div>
-    <h2>Operations that scale, teams that deliver.</h2>
-    <p class="section-lead">Based in Silver Spring, Maryland, I lead operations for growing businesses across the Washington DC metro. My work sits where strategy meets execution: standing up the processes, tools, and team structures that turn a good idea into a business that runs — and keeps running when volume climbs. I move comfortably between the numbers (budgets, unit economics, forecasting) and the people (hiring, training, culture), because operations only works when both hold.</p>
-    <div>
-      <span class="tag">Operations Leadership</span>
-      <span class="tag">Process Design</span>
-      <span class="tag">Team Building</span>
-      <span class="tag">Financial Modeling</span>
-      <span class="tag">Vendor &amp; Partner Management</span>
-      <span class="tag">Project Management</span>
-      <span class="tag">Go-to-Market</span>
+    <div class="kick rv">three operating modes</div>
+    <h2 class="rv">One person. Three job descriptions.</h2>
+    <p class="lead rv">Most people pick a lane. I run three in parallel, and the trick is that each one makes the others better.</p>
+    <div class="trio">
+      <div class="id rv"><div class="ico">⚙️</div><h3>The Engineer</h3><p>I build systems: booking-to-delivery pipelines, automation, demand models, prototypes, static sites deployed by hand. If it has moving parts and a failure mode, I want to design it. This site? Hand-coded, zero frameworks, view-source friendly.</p><div class="bar"></div></div>
+      <div class="id rv"><div class="ico">📈</div><h3>The COO</h3><p>Two companies operated at the executive level. Budgets, forecasting, hiring, vendor contracts, SOPs — the unglamorous machinery that decides whether a business survives contact with growth. I read the fine print and enjoy it.</p><div class="bar"></div></div>
+      <div class="id rv"><div class="ico">🗣️</div><h3>The Human</h3><p>Gregarious is the polite word. I build partnerships with venues, teams, vendors, and government offices because I genuinely like people — and operations only works when both the spreadsheet AND the relationship hold.</p><div class="bar"></div></div>
     </div>
   </div>
 </section>
 
-<section id="experience">
+<section id="work">
   <div class="wrap">
-    <div class="kicker">Experience</div>
-    <h2>Where I've led.</h2>
-
-    <div class="exp">
-      <div class="side">Current<br>Washington DC Metro</div>
-      <div class="body">
+    <div class="kick rv">the record</div>
+    <h2 class="rv">Where I've built.</h2>
+    <div class="tl">
+      <div class="node rv">
+        <div class="when">NOW → · WASHINGTON DC METRO</div>
         <h3>Samshots — Photo &amp; Video</h3>
         <div class="role">COO / Operations Lead</div>
         <ul>
-          <li>Run day-to-day operations for an award-winning DMV wedding &amp; portrait studio serving 700+ couples.</li>
-          <li>Own booking-to-delivery workflow, team scheduling, and the systems that keep delivery on a guaranteed timeline.</li>
-          <li>Lead marketing operations, web presence, and vendor/venue partnerships across DC, Maryland, and Virginia.</li>
+          <li>Run operations for an award-winning DMV wedding &amp; portrait studio serving 700+ couples.</li>
+          <li>Own the booking-to-delivery machine: scheduling, workflow, guaranteed delivery timelines.</li>
+          <li>Led the website replatform (Wix → hand-built static on Netlify) and marketing operations.</li>
         </ul>
+        <span class="tag">Ops Systems</span><span class="tag">Web Engineering</span><span class="tag">Marketing</span><span class="tag">Partnerships</span>
       </div>
-    </div>
-
-    <div class="exp">
-      <div class="side">Prior<br>Maryland</div>
-      <div class="body">
+      <div class="node rv">
+        <div class="when">PRIOR · MARYLAND</div>
         <h3>IPS — Legal &amp; Paralegal Services</h3>
         <div class="role">Chief Operating Officer</div>
         <ul>
-          <li>Directed operations for a legal/paralegal services company, standardizing intake, casework, and delivery processes.</li>
-          <li>Built and managed cross-functional teams and the reporting structures behind them.</li>
-          <li>Partnered with executive leadership on financial planning and organizational strategy.</li>
+          <li>Directed operations: standardized intake, casework, and delivery processes.</li>
+          <li>Built cross-functional teams and the reporting structures behind them.</li>
+          <li>Partnered with the CEO on financial planning and org strategy.</li>
         </ul>
+        <span class="tag">Process Design</span><span class="tag">Team Building</span><span class="tag">Financial Planning</span>
       </div>
-    </div>
-
-    <div class="exp">
-      <div class="side">Selected<br>Ventures</div>
-      <div class="body">
-        <h3>Independent Operations &amp; Media Projects</h3>
+      <div class="node rv">
+        <div class="when">SELECTED VENTURES</div>
+        <h3>Independent Media &amp; Product Work</h3>
         <div class="role">Founder / Operator</div>
         <ul>
-          <li>Launched and operated video production and live-streaming services — 4K delivery, multi-camera live events, and post workflows.</li>
-          <li>Developed early-stage concepts spanning public-safety programs and productivity tooling, from research and cost modeling through pitch and prototype.</li>
+          <li>Launched video production &amp; live-streaming services — 4K delivery, multi-camera live events, full post pipelines.</li>
+          <li>Take concepts from research and cost modeling through pitch decks and working prototypes.</li>
         </ul>
+        <span class="tag">4K / Live Video</span><span class="tag">Prototyping</span><span class="tag">Cost Modeling</span><span class="tag">Pitch Craft</span>
       </div>
     </div>
   </div>
 </section>
 
-<section id="skills">
+<section id="stealth" class="stealth">
   <div class="wrap">
-    <div class="kicker">Capabilities</div>
-    <h2>What I bring to the table.</h2>
-    <div class="grid3">
-      <div class="skillcard">
-        <h3>Operations &amp; Strategy</h3>
-        <p>Process design, SOPs, workflow automation, capacity planning, and the org structures that let a business scale without breaking.</p>
-      </div>
-      <div class="skillcard">
-        <h3>Finance &amp; Analysis</h3>
-        <p>Budgeting, unit economics, forecasting, pricing analysis, and cost-benefit modeling to support real decisions.</p>
-      </div>
-      <div class="skillcard">
-        <h3>Team &amp; People</h3>
-        <p>Hiring, onboarding, training, and building teams that stay — with communication that keeps everyone rowing the same direction.</p>
-      </div>
-      <div class="skillcard">
-        <h3>Marketing &amp; Growth</h3>
-        <p>Brand presence, content and social strategy, web and funnel operations, and partner/venue relationship management.</p>
-      </div>
-      <div class="skillcard">
-        <h3>Media Production</h3>
-        <p>4K video delivery, live streaming, multi-camera events, audio, and editing workflows in professional post pipelines.</p>
-      </div>
-      <div class="skillcard">
-        <h3>Product &amp; Tech</h3>
-        <p>From concept research to prototype — requirements, cost models, and working demos for new products and programs.</p>
-      </div>
+    <div class="kick rv" style="text-align:center">current obsession</div>
+    <h2 class="rv" style="text-align:center">The thing I can't talk about<span class="blink">_</span></h2>
+    <div class="classified rv">
+      <div class="stamp">STEALTH</div>
+      <h3>Project: <span class="redact" title="nice try">██████████</span></h3>
+      <p>A government-scale public-safety program for the <b style="color:var(--ink)">DC–Maryland–Virginia region</b>. Co-founded, currently in stealth while the legal groundwork clears.</p>
+      <p>What I can say: it pairs <span class="redact">████ ███████</span> with <span class="redact">█████████ ██████████</span>, it's designed to save lives at the exact moment they're most at risk, and the pitch deck is <em>very</em> good.</p>
+      <p class="mono" style="font-size:13px;color:var(--amber)">status: filings in progress · pilot targeted 2027 · ask me over coffee — I will smile and change the subject.</p>
+    </div>
+  </div>
+</section>
+
+<section id="human">
+  <div class="wrap">
+    <div class="kick rv">proof of personality</div>
+    <h2 class="rv">Yes, I'm that guy at the party.</h2>
+    <p class="lead rv">The one who knows the bartender's name by 9pm and the whole room's by 11. Here's what that looks like professionally:</p>
+    <div class="fun">
+      <div class="funcard rv"><h3><span class="e">🤝</span>Partnership whisperer</h3><p>Venues, vendors, government offices, photographers, developers — I've built working relationships with all of them, usually starting from a cold hello.</p></div>
+      <div class="funcard rv"><h3><span class="e">🎤</span>Give me the mic</h3><p>Pitches, team meetings, wedding-day crowd control — comfortable in front of any room, from a two-person sync to a county pitch.</p></div>
+      <div class="funcard rv"><h3><span class="e">🎥</span>Streamer-grade nerd</h3><p>Twitch, YouTube, Discord, OBS — I speak fluent internet and can set up a broadcast rig faster than most people set up a printer.</p></div>
+      <div class="funcard rv"><h3><span class="e">🧠</span>Weaponized curiosity</h3><p>I read traffic-safety datasets and county budgets recreationally. Ask me literally anything about the DMV region and pack a lunch.</p></div>
+    </div>
+    <div class="coffee rv">
+      <h3>☕ The coffee protocol</h3>
+      <p>Best meetings happen over coffee. If you're in the DC metro and want to talk operations, engineering, weddings, streaming, or the thing I can't talk about — first round's on me.</p>
+      <a class="btn btn-p" href="mailto:skisaksen@gmail.com?subject=Coffee%3F%20%E2%98%95&body=Sebastian%20%E2%80%94%20saw%20the%20site.%20Let's%20grab%20coffee.%20I%20want%20to%20talk%20about%3A%20">Invoke the protocol →</a>
     </div>
   </div>
 </section>
 
 <section id="contact">
   <div class="wrap">
-    <div class="kicker">Contact</div>
-    <h2>Let's talk.</h2>
-    <p class="section-lead">Open to operations leadership, consulting, and partnership conversations across the DC / Maryland / Virginia region.</p>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <div class="lbl">Email</div>
-        <a href="mailto:skisaksen@gmail.com">skisaksen@gmail.com</a>
-      </div>
-      <div class="contact-card">
-        <div class="lbl">Phone</div>
-        <a href="tel:2409884450">240-988-4450</a>
-      </div>
-      <div class="contact-card">
-        <div class="lbl">Location</div>
-        <span>Silver Spring, MD</span>
-      </div>
+    <div class="kick rv">open channels</div>
+    <h2 class="rv">Let's build something.</h2>
+    <p class="lead rv">Open to operations leadership, consulting, partnerships, and good conversations across DC / Maryland / Virginia.</p>
+    <div class="cgrid">
+      <div class="ccard rv"><div class="l">Email</div><a href="mailto:skisaksen@gmail.com">skisaksen@gmail.com</a></div>
+      <div class="ccard rv"><div class="l">Phone</div><a href="tel:2403935704">240-393-5704</a></div>
+      <div class="ccard rv"><div class="l">GitHub</div><a href="https://github.com/skisaksen">github.com/skisaksen</a></div>
     </div>
   </div>
 </section>
 
 <footer>
-  © <span id="yr"></span> Sebastian Isaksen · Washington DC · Maryland · Virginia
+  © <span id="yr"></span> Sebastian Isaksen · Silver Spring, MD ·
+  <span class="mono">hand-coded, zero frameworks</span> ·
+  press <span class="mono">`</span> for the terminal · try the Konami code, I dare you
 </footer>
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+
+<div id="term">
+  <div class="bar"><span><b>sebbie@dmv</b>:~$ guest session</span><span class="x" onclick="toggleTerm()">✕ close</span></div>
+  <div class="out" id="tout">Welcome to sebbie-sh v1.0 — type 'help' to begin.
+</div>
+  <input id="tin" placeholder="type a command…" autocomplete="off">
+</div>
+
+<script>
+/* ---------- year ---------- */
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* ---------- progress bar ---------- */
+addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('prog').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+
+/* ---------- custom cursor ---------- */
+const cur=document.getElementById('cur');
+addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';});
+document.querySelectorAll('a,button,.redact').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('hot'));el.addEventListener('mouseleave',()=>cur.classList.remove('hot'));});
+
+/* ---------- typewriter ---------- */
+const roles=["an engineer.","a COO.","a systems builder.","the guy who knows everyone.","a live-video nerd.","building something secret.","probably free for coffee."];
+const T=document.getElementById('type');let ri=0,ci=0,del=false;
+(function tick(){
+  const w=roles[ri];
+  T.textContent=w.slice(0,ci);
+  if(!del&&ci<w.length){ci++;setTimeout(tick,65);}
+  else if(!del){del=true;setTimeout(tick,1600);}
+  else if(ci>0){ci--;setTimeout(tick,32);}
+  else{del=false;ri=(ri+1)%roles.length;setTimeout(tick,300);}
+})();
+
+/* ---------- particle network ---------- */
+const cv=document.getElementById('net'),cx=cv.getContext('2d');let P=[],mx=-999,my=-999;
+function sz(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight;P=Array.from({length:Math.min(90,cv.width/14)},()=>({x:Math.random()*cv.width,y:Math.random()*cv.height,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4}));}
+sz();addEventListener('resize',sz);
+cv.parentElement.addEventListener('mousemove',e=>{const r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;});
+(function loop(){
+  cx.clearRect(0,0,cv.width,cv.height);
+  for(const p of P){
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0||p.x>cv.width)p.vx*=-1;if(p.y<0||p.y>cv.height)p.vy*=-1;
+    const dm=Math.hypot(p.x-mx,p.y-my);
+    if(dm<130){p.x+=(p.x-mx)/dm*1.2;p.y+=(p.y-my)/dm*1.2;}
+    cx.fillStyle='rgba(34,211,238,.7)';cx.beginPath();cx.arc(p.x,p.y,1.6,0,7);cx.fill();
+  }
+  for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++){
+    const a=P[i],b=P[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+    if(d<120){cx.strokeStyle=`rgba(34,211,238,${(1-d/120)*.25})`;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke();}
+  }
+  requestAnimationFrame(loop);
+})();
+
+/* ---------- scroll reveal ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* ---------- counters ---------- */
+const co=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;co.unobserve(e.target);
+  const el=e.target,n=+el.dataset.n,suf=el.dataset.suf||'';let c=0;
+  const st=Math.max(1,Math.round(n/40));
+  (function up(){c=Math.min(n,c+st);el.textContent=c+suf;if(c<n)setTimeout(up,30);})();
+}),{threshold:.6});
+document.querySelectorAll('.stat b').forEach(el=>co.observe(el));
+
+/* ---------- card tilt + spotlight ---------- */
+document.querySelectorAll('.id').forEach(c=>{
+  c.addEventListener('mousemove',e=>{
+    const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+    c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');
+    c.style.transform=`rotateX(${(y-r.height/2)/-22}deg) rotateY(${(x-r.width/2)/22}deg)`;
+  });
+  c.addEventListener('mouseleave',()=>c.style.transform='');
+});
+
+/* ---------- marquee duplicate ---------- */
+const mq=document.getElementById('marq');mq.innerHTML+=mq.innerHTML;
+
+/* ---------- terminal ---------- */
+const term=document.getElementById('term'),tout=document.getElementById('tout'),tin=document.getElementById('tin');
+function toggleTerm(){term.classList.toggle('open');if(term.classList.contains('open'))tin.focus();}
+addEventListener('keydown',e=>{if(e.key==='`'&&document.activeElement!==tin){e.preventDefault();toggleTerm();}});
+const CMDS={
+  help:"commands: whoami · work · stealth · coffee · skills · social · konami · clear · exit",
+  whoami:"Sebastian 'Sebbie' Isaksen — engineer of operations, COO ×2,\nprofessional extrovert. Silver Spring, MD. Runs on coffee and curiosity.",
+  work:"NOW    Samshots (COO) — 700+ couples, ops + web + marketing\nPRIOR  IPS (COO) — legal services operations\nALWAYS media production, prototypes, cost models",
+  stealth:"ACCESS DENIED.\n...\nokay fine: public-safety program, DMV region, in stealth.\nfilings pending. that's all you get. buy me coffee and\nI'll say the same thing but with more enthusiasm.",
+  coffee:"☕ protocol initiated → skisaksen@gmail.com, subject 'Coffee?'\nfirst round's on me if you're in the DC metro.",
+  skills:"ops-systems ████████████ 96%\nfinancial-modeling ██████████ 90%\npeople-skills █████████████ 110% (uncapped)\nvideo-production ███████████ 92%\nknowing-a-guy ████████████ 99%",
+  social:"instagram/twitch/youtube/discord: fluent.\nreal life: dangerously fluent.",
+  konami:"↑ ↑ ↓ ↓ ← → ← → B A — you know what to do.",
+  clear:"__CLEAR__",
+  exit:"__EXIT__",
+  sudo:"nice try. this is MY website.",
+  ls:"projects/  spreadsheets/  secrets/  coffee.sh",
+  "cat secrets":"permission denied (and honestly, respect the hustle)"
+};
+tin.addEventListener('keydown',e=>{
+  if(e.key!=='Enter')return;
+  const q=tin.value.trim().toLowerCase();tin.value='';
+  if(!q)return;
+  tout.textContent+="\nsebbie@dmv:~$ "+q+"\n";
+  const r=CMDS[q]||`command not found: ${q} — try 'help'`;
+  if(r==="__CLEAR__")tout.textContent="";
+  else if(r==="__EXIT__")toggleTerm();
+  else tout.textContent+=r+"\n";
+  tout.scrollTop=tout.scrollHeight;
+});
+
+/* ---------- konami → party ---------- */
+const KC=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];let ki=0;
+addEventListener('keydown',e=>{ki=(e.key===KC[ki])?ki+1:0;if(ki===KC.length){ki=0;party();}});
+const pc=document.getElementById('party'),px=pc.getContext('2d');let conf=[];
+function party(){
+  pc.width=innerWidth;pc.height=innerHeight;
+  conf=Array.from({length:220},()=>({x:Math.random()*pc.width,y:-20-Math.random()*pc.height*.5,v:2+Math.random()*4,s:4+Math.random()*6,c:['#22d3ee','#fbbf24','#f472b6','#4ade80'][Math.floor(Math.random()*4)],r:Math.random()*6.28}));
+  document.body.style.filter='hue-rotate(20deg)';setTimeout(()=>document.body.style.filter='',2400);
+  (function fall(){
+    px.clearRect(0,0,pc.width,pc.height);let alive=false;
+    for(const f of conf){f.y+=f.v;f.r+=.1;if(f.y<pc.height+20)alive=true;
+      px.save();px.translate(f.x,f.y);px.rotate(f.r);px.fillStyle=f.c;px.fillRect(-f.s/2,-f.s/2,f.s,f.s);px.restore();}
+    if(alive)requestAnimationFrame(fall);else px.clearRect(0,0,pc.width,pc.height);
+  })();
+}
+</script>
 </body>
 </html>
