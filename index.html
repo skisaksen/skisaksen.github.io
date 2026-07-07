@@ -3,24 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sebastian Isaksen — Engineer of Operations · Builder · People Person</title>
-<meta name="description" content="Sebastian Isaksen — COO-level operator, systems builder, and unreasonably social human in the Washington DC metro. I build the machines behind businesses — and the relationships that power them.">
-<meta name="theme-color" content="#07090f">
+<title>Sebastian Isaksen — Engineer of Systems · Ex-Northrop Grumman @ FAA · COO</title>
+<meta name="description" content="Sebastian Isaksen — UMD electrical engineer hired straight into Northrop Grumman on the FAA mission. Systems engineer, two-time COO, and unreasonably social human in the Washington DC metro.">
+<meta name="theme-color" content="#05070d">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#07090f; --bg2:#0b0f1a; --card:#0f1524; --line:#1c2740;
-  --ink:#e8eefb; --mut:#8fa3c4; --cyan:#22d3ee; --amber:#fbbf24; --mag:#f472b6;
+  --bg:#05070d; --bg2:#0b0f1a; --card:#0f1524; --line:#1c2740;
+  --ink:#e8eefb; --mut:#8fa3c4; --cyan:#22d3ee; --amber:#fbbf24; --mag:#f472b6; --grn:#4ade80;
   --glow:0 0 24px rgba(34,211,238,.35);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:transparent;color:var(--ink);line-height:1.6;overflow-x:hidden}
 ::selection{background:var(--cyan);color:#03242c}
 a{color:var(--cyan);text-decoration:none}
 .mono{font-family:'JetBrains Mono',monospace}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
+
+/* ===== full-page sky chart ===== */
+#sky{position:fixed;inset:0;z-index:-1;width:100vw;height:100vh}
 
 /* progress bar */
 #prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--cyan),var(--mag),var(--amber));z-index:99;box-shadow:var(--glow)}
@@ -31,46 +34,58 @@ a{color:var(--cyan);text-decoration:none}
 @media(hover:none){#cur{display:none}}
 
 /* nav */
-nav{position:fixed;top:3px;left:0;right:0;z-index:50;background:rgba(7,9,15,.72);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{position:fixed;top:3px;left:0;right:0;z-index:50;background:rgba(5,7,13,.72);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
 .brand{font-weight:700;letter-spacing:.5px}
 .brand b{color:var(--cyan)}
 .brand .dot{color:var(--mag)}
-nav ul{display:flex;gap:24px;list-style:none;align-items:center}
+nav ul{display:flex;gap:22px;list-style:none;align-items:center}
 nav ul a{color:var(--mut);font-size:14px;font-weight:600;transition:color .2s}
 nav ul a:hover{color:var(--cyan)}
 .termbtn{border:1px solid var(--line);border-radius:8px;padding:5px 12px;font-size:13px;color:var(--amber);cursor:pointer;background:none;font-family:'JetBrains Mono',monospace}
 .termbtn:hover{border-color:var(--amber);box-shadow:0 0 14px rgba(251,180,36,.25)}
-@media(max-width:700px){nav ul li.hideM{display:none}}
+@media(max-width:760px){nav ul li.hideM{display:none}}
 
 /* hero */
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:120px 0 80px}
-#net{position:absolute;inset:0;z-index:0}
-.hero .wrap{position:relative;z-index:2}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:120px 0 80px;perspective:1000px}
+.heroInner{transform-style:preserve-3d;will-change:transform}
 .eyebrow{color:var(--amber);letter-spacing:3px;font-size:13px;text-transform:uppercase;font-weight:600}
-.eyebrow::before{content:"● ";color:var(--mag)}
-h1{font-size:clamp(40px,7vw,76px);line-height:1.05;font-weight:700;margin:18px 0 8px}
+.eyebrow::before{content:"✈ ";color:var(--mag)}
+h1{font-size:clamp(38px,6.6vw,74px);line-height:1.05;font-weight:700;margin:18px 0 8px;text-shadow:0 6px 40px rgba(34,211,238,.15)}
 h1 .grad{background:linear-gradient(90deg,var(--cyan),var(--mag));-webkit-background-clip:text;background-clip:text;color:transparent}
 #type{color:var(--cyan);border-right:3px solid var(--amber);padding-right:4px;white-space:nowrap}
-.lede{font-size:clamp(16px,2.2vw,21px);color:var(--mut);max-width:640px;margin:18px 0 30px}
+.lede{font-size:clamp(16px,2.2vw,20px);color:var(--mut);max-width:660px;margin:18px 0 30px}
+.lede b{color:var(--ink)}
 .cta{display:flex;gap:14px;flex-wrap:wrap}
 .btn{padding:14px 26px;border-radius:12px;font-weight:700;font-size:15px;transition:transform .15s,box-shadow .2s;display:inline-block}
 .btn:active{transform:scale(.97)}
 .btn-p{background:linear-gradient(90deg,var(--cyan),#4ade80);color:#03242c}
 .btn-p:hover{box-shadow:var(--glow);transform:translateY(-2px)}
-.btn-g{border:1px solid var(--line);color:var(--ink)}
+.btn-g{border:1px solid var(--line);color:var(--ink);background:rgba(15,21,36,.6)}
 .btn-g:hover{border-color:var(--mag);box-shadow:0 0 18px rgba(244,114,182,.25);transform:translateY(-2px)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px;max-width:720px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:52px;max-width:760px}
 @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
-.stat{background:rgba(15,21,36,.7);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center;backdrop-filter:blur(6px)}
-.stat b{display:block;font-size:30px;color:var(--amber);font-family:'JetBrains Mono',monospace}
+.stat{background:rgba(15,21,36,.72);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center;backdrop-filter:blur(6px)}
+.stat b{display:block;font-size:28px;color:var(--amber);font-family:'JetBrains Mono',monospace}
 .stat span{font-size:11px;color:var(--mut);letter-spacing:1.5px;text-transform:uppercase}
 .scrolldown{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:var(--mut);font-size:22px;animation:bob 1.6s infinite;z-index:2}
 @keyframes bob{50%{transform:translate(-50%,8px)}}
 
+/* gyroscope */
+.gyroWrap{position:absolute;right:4%;top:16%;width:300px;height:300px;perspective:900px;z-index:1;opacity:.85}
+@media(max-width:1100px){.gyroWrap{display:none}}
+.gyro{position:absolute;inset:0;transform-style:preserve-3d;animation:gspin 22s linear infinite}
+.gyro .r{position:absolute;inset:0;border:1.5px solid rgba(34,211,238,.55);border-radius:50%;box-shadow:0 0 18px rgba(34,211,238,.15) inset}
+.gyro .r2{transform:rotateY(66deg);border-color:rgba(244,114,182,.5)}
+.gyro .r3{transform:rotateX(66deg);border-color:rgba(251,191,36,.5)}
+.gyro .r4{inset:22%;border-color:rgba(74,222,128,.4);transform:rotateY(30deg) rotateX(45deg)}
+.gyro .core{position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:50%;background:var(--cyan);transform:translate(-50%,-50%);box-shadow:0 0 22px var(--cyan)}
+@keyframes gspin{to{transform:rotateX(360deg) rotateY(360deg)}}
+.gyroWrap .tag{position:absolute;bottom:-28px;width:100%;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mut);letter-spacing:2px}
+
 /* marquee */
-.marq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--bg2);padding:14px 0;white-space:nowrap}
-.marq-in{display:inline-block;animation:slide 30s linear infinite}
+.marq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:rgba(11,15,26,.8);padding:14px 0;white-space:nowrap;position:relative;z-index:2}
+.marq-in{display:inline-block;animation:slide 32s linear infinite}
 .marq span{margin:0 26px;color:var(--mut);font-size:14px;font-family:'JetBrains Mono',monospace}
 .marq span b{color:var(--cyan);font-weight:400}
 @keyframes slide{to{transform:translateX(-50%)}}
@@ -81,15 +96,30 @@ section{padding:96px 0;position:relative}
 .kick::before{content:"// "}
 h2{font-size:clamp(28px,4vw,42px);font-weight:700;margin:10px 0 18px}
 .lead{color:var(--mut);max-width:700px;font-size:17px;margin-bottom:40px}
-
-/* reveal */
 .rv{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
 .rv.on{opacity:1;transform:none}
 
+/* ===== ORIGIN / flight strip ===== */
+.origin{background:rgba(11,15,26,.78);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.strip{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:0;align-items:stretch;margin:34px 0 26px;font-family:'JetBrains Mono',monospace}
+@media(max-width:820px){.strip{grid-template-columns:1fr}}
+.leg{background:rgba(15,21,36,.85);border:1px solid var(--amber);border-radius:10px;padding:18px 20px;position:relative;transition:transform .2s,box-shadow .25s}
+.leg:hover{transform:translateY(-4px);box-shadow:0 0 26px rgba(251,191,36,.25)}
+.leg .l1{font-size:11px;color:var(--amber);letter-spacing:2px}
+.leg .l2{font-size:19px;font-weight:700;color:var(--ink);margin:4px 0 2px}
+.leg .l3{font-size:12.5px;color:var(--mut)}
+.arrow{display:flex;align-items:center;justify-content:center;color:var(--cyan);font-size:26px;padding:0 14px;text-shadow:0 0 14px var(--cyan)}
+@media(max-width:820px){.arrow{transform:rotate(90deg);padding:6px 0}}
+.awards{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.aw{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.4);color:var(--amber);border-radius:999px;padding:6px 16px;font-size:13px;font-weight:600;transition:transform .15s,box-shadow .2s}
+.aw:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 0 18px rgba(251,191,36,.3)}
+.toolrow{margin-top:18px;color:var(--mut);font-size:14px}
+.toolrow .mono{color:var(--cyan)}
+
 /* identity cards */
-.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;perspective:1200px}
 @media(max-width:820px){.trio{grid-template-columns:1fr}}
-.id{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;transition:transform .18s ease,box-shadow .25s;transform-style:preserve-3d;position:relative;overflow:hidden}
+.id{background:rgba(15,21,36,.88);border:1px solid var(--line);border-radius:18px;padding:28px;transition:transform .18s ease,box-shadow .25s;transform-style:preserve-3d;position:relative;overflow:hidden}
 .id::after{content:"";position:absolute;inset:0;background:radial-gradient(400px 200px at var(--mx,50%) var(--my,0%),rgba(34,211,238,.10),transparent);pointer-events:none}
 .id h3{font-size:21px;margin:10px 0 8px}
 .id .ico{font-size:34px}
@@ -100,8 +130,8 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:700;margin:10px 0 18px}
 
 /* timeline */
 .tl{position:relative;margin-left:16px;padding-left:34px;border-left:2px solid var(--line)}
-.tl .node{position:relative;margin-bottom:38px}
-.tl .node::before{content:"";position:absolute;left:-43px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--cyan);box-shadow:var(--glow)}
+.tl .node{position:relative;margin-bottom:38px;background:rgba(5,7,13,.55);border-radius:14px;padding:14px 16px}
+.tl .node::before{content:"";position:absolute;left:-43px;top:20px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--cyan);box-shadow:var(--glow)}
 .tl .when{color:var(--amber);font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:1px}
 .tl h3{font-size:22px;margin:4px 0 2px}
 .tl .role{color:var(--cyan);font-weight:600;font-size:14px;margin-bottom:8px}
@@ -110,37 +140,38 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:700;margin:10px 0 18px}
 .tag{display:inline-block;background:rgba(34,211,238,.08);color:var(--cyan);border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:600;margin:4px 5px 0 0}
 
 /* stealth */
-.stealth{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.classified{max-width:760px;margin:0 auto;background:var(--card);border:1px dashed var(--amber);border-radius:18px;padding:34px;position:relative;overflow:hidden}
+.stealth{background:rgba(11,15,26,.85);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.classified{max-width:760px;margin:0 auto;background:rgba(15,21,36,.92);border:1px dashed var(--amber);border-radius:18px;padding:34px;position:relative;overflow:hidden;transition:transform .18s,box-shadow .25s}
+.classified:hover{box-shadow:0 0 34px rgba(251,191,36,.18)}
 .classified .stamp{position:absolute;top:18px;right:-42px;background:var(--mag);color:#2b0518;font-weight:700;font-size:12px;letter-spacing:3px;padding:6px 56px;transform:rotate(35deg)}
 .redact{display:inline-block;background:var(--ink);color:var(--ink);border-radius:4px;padding:0 6px;cursor:not-allowed;transition:all .2s;user-select:none}
-.redact:hover{background:var(--mag);color:#2b0518;content:"nice try"}
+.redact:hover{background:var(--mag);color:#2b0518}
 .classified h3{font-size:24px;margin-bottom:10px}
 .classified p{color:var(--mut);font-size:16px;margin-bottom:10px}
 .blink{animation:blink 1.2s steps(1) infinite;color:var(--amber)}
 @keyframes blink{50%{opacity:0}}
 
 /* social */
-.fun{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.fun{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;perspective:1200px}
 @media(max-width:820px){.fun{grid-template-columns:1fr}}
-.funcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .18s,box-shadow .25s}
-.funcard:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.funcard{background:rgba(15,21,36,.88);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .18s,box-shadow .25s;transform-style:preserve-3d}
+.funcard:hover{box-shadow:0 16px 40px rgba(0,0,0,.45)}
 .funcard h3{font-size:18px;margin-bottom:8px}
 .funcard h3 .e{margin-right:8px}
 .funcard p{color:var(--mut);font-size:15px}
-.coffee{margin-top:44px;text-align:center;background:linear-gradient(135deg,rgba(34,211,238,.08),rgba(244,114,182,.08));border:1px solid var(--line);border-radius:22px;padding:44px 26px}
+.coffee{margin-top:44px;text-align:center;background:linear-gradient(135deg,rgba(34,211,238,.10),rgba(244,114,182,.10));border:1px solid var(--line);border-radius:22px;padding:44px 26px;backdrop-filter:blur(4px)}
 .coffee h3{font-size:clamp(22px,3.4vw,32px);margin-bottom:10px}
 .coffee p{color:var(--mut);max-width:560px;margin:0 auto 22px}
 
 /* contact */
 .cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 @media(max-width:700px){.cgrid{grid-template-columns:1fr}}
-.ccard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;text-align:center;transition:border-color .2s,box-shadow .2s}
-.ccard:hover{border-color:var(--cyan);box-shadow:var(--glow)}
+.ccard{background:rgba(15,21,36,.88);border:1px solid var(--line);border-radius:16px;padding:24px;text-align:center;transition:border-color .2s,box-shadow .2s,transform .18s}
+.ccard:hover{border-color:var(--cyan);box-shadow:var(--glow);transform:translateY(-3px)}
 .ccard .l{font-size:11px;color:var(--mut);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
 .ccard a,.ccard span{font-size:17px;font-weight:600;color:var(--ink)}
 
-footer{padding:44px 0;text-align:center;color:var(--mut);font-size:13px;border-top:1px solid var(--line)}
+footer{padding:44px 0;text-align:center;color:var(--mut);font-size:13px;border-top:1px solid var(--line);background:rgba(5,7,13,.8);position:relative;z-index:2}
 footer .mono{color:var(--cyan)}
 
 /* terminal */
@@ -152,17 +183,19 @@ footer .mono{color:var(--cyan)}
 #term input{width:100%;background:none;border:none;border-top:1px solid var(--line);color:var(--amber);padding:11px 14px;font-family:'JetBrains Mono',monospace;font-size:13px;outline:none}
 #term .x{cursor:pointer;color:var(--mag)}
 
-/* confetti canvas */
 #party{position:fixed;inset:0;pointer-events:none;z-index:96}
 
 @media (prefers-reduced-motion: reduce){
   *{animation:none!important;transition:none!important}
   .rv{opacity:1;transform:none}
+  #sky{display:none}
+  html{background:var(--bg)}
 }
 </style>
 </head>
 <body>
 
+<canvas id="sky"></canvas>
 <div id="prog"></div>
 <div id="cur"></div>
 <canvas id="party"></canvas>
@@ -171,6 +204,7 @@ footer .mono{color:var(--cyan)}
   <div class="wrap">
     <div class="brand mono">sebastian<b>isaksen</b><span class="dot">.dev</span></div>
     <ul>
+      <li class="hideM"><a href="#origin">Origin</a></li>
       <li class="hideM"><a href="#who">Who</a></li>
       <li class="hideM"><a href="#work">Work</a></li>
       <li class="hideM"><a href="#stealth">Stealth</a></li>
@@ -182,21 +216,24 @@ footer .mono{color:var(--cyan)}
 </nav>
 
 <header class="hero">
-  <canvas id="net"></canvas>
-  <div class="wrap">
-    <div class="eyebrow">Silver Spring, MD · Washington DC Metro · Occasionally Sleeping</div>
+  <div class="gyroWrap" aria-hidden="true">
+    <div class="gyro"><div class="r"></div><div class="r r2"></div><div class="r r3"></div><div class="r r4"></div><div class="core"></div></div>
+    <div class="tag">SYSTEMS · NOMINAL</div>
+  </div>
+  <div class="wrap heroInner" id="heroInner">
+    <div class="eyebrow">UMD Engineer · Ex-Northrop Grumman @ the FAA · Silver Spring, MD</div>
     <h1>Hi, I'm Sebastian.<br>I'm <span id="type"></span></h1>
-    <p class="lede">COO-level operator and systems builder. I engineer the machines behind businesses — booking pipelines, budgets, dashboards, teams — and I do it while being the most talkative person in the room. Both are load-bearing.</p>
+    <p class="lede">Electrical engineer out of Maryland's Clark School — <b>hired straight out of school by Northrop Grumman</b> to work systems engineering on the <b>FAA's national airspace mission</b>. Now a two-time COO who builds the machines behind businesses, while being the most talkative person in the room. Both are load-bearing.</p>
     <div class="cta">
       <a class="btn btn-p" href="#contact">Let's talk →</a>
-      <a class="btn btn-g" href="#work">See the work</a>
+      <a class="btn btn-g" href="#origin">The origin story</a>
       <a class="btn btn-g mono" href="javascript:toggleTerm()">try the terminal</a>
     </div>
     <div class="stats">
-      <div class="stat"><b data-n="16" data-suf="+">0</b><span>Years in Ops</span></div>
-      <div class="stat"><b data-n="2">0</b><span>Companies as COO</span></div>
-      <div class="stat"><b data-n="700" data-suf="+">0</b><span>Couples Served (Samshots)</span></div>
-      <div class="stat"><b data-n="1">0</b><span>Stealth Venture 👀</span></div>
+      <div class="stat"><b data-n="16" data-suf="+">0</b><span>Years Eng + Ops</span></div>
+      <div class="stat"><b data-n="2.2" data-dec="1" data-pre="$" data-suf="M">0</b><span>Certified Cost Savings</span></div>
+      <div class="stat"><b data-n="2" data-suf="×">0</b><span>Chief Operating Officer</span></div>
+      <div class="stat"><b data-n="5">0</b><span>CMMI Maturity Level</span></div>
     </div>
   </div>
   <div class="scrolldown">▼</div>
@@ -204,15 +241,39 @@ footer .mono{color:var(--cyan)}
 
 <div class="marq" aria-hidden="true">
   <div class="marq-in" id="marq">
-    <span><b>currently:</b> shipping a static site to Netlify</span>
-    <span><b>modeling:</b> unit economics in spreadsheets with too many tabs</span>
+    <span><b>pedigree:</b> UMD Clark School EE → Northrop Grumman → FAA mission</span>
+    <span><b>fluent in:</b> DoDAF, CDRLs, WBS, EVM, FAR — yes, the whole acronym airspace</span>
+    <span><b>currently:</b> shipping static sites and county-scale pitches</span>
     <span><b>editing:</b> 4K multicam in Premiere</span>
     <span><b>reading:</b> county budget PDFs for fun (really)</span>
-    <span><b>talking to:</b> literally anyone — bartenders, councilmembers, your mom</span>
+    <span><b>talking to:</b> literally anyone — bartenders, councilmembers, air traffic controllers</span>
     <span><b>building:</b> something I legally can't tell you about yet</span>
     <span><b>drinking:</b> coffee, and offering you one</span>
   </div>
 </div>
+
+<section id="origin" class="origin">
+  <div class="wrap">
+    <div class="kick rv">flight plan · filed 2008</div>
+    <h2 class="rv">Cleared for takeoff, straight out of school.</h2>
+    <p class="lead rv">Northrop Grumman hired me directly out of the University of Maryland's A. James Clark School of Engineering — and put me on the systems that keep the national airspace running. Requirements analysis, design tradeoffs, COTS integration, risk management, DoDAF compliance: the FAA mission is where I learned that engineering discipline and human coordination are the same job.</p>
+    <div class="strip rv">
+      <div class="leg"><div class="l1">DEPARTURE</div><div class="l2">UMD · CLARK SCHOOL</div><div class="l3">B.S. Electrical Engineering '07 · A. James Clark School of Engineering</div></div>
+      <div class="arrow">✈</div>
+      <div class="leg"><div class="l1">CLEARED DIRECT</div><div class="l2">NORTHROP GRUMMAN</div><div class="l3">Systems engineering &amp; project leadership · Washington, DC · 2008 → TASC</div></div>
+      <div class="arrow">✈</div>
+      <div class="leg"><div class="l1">DESTINATION</div><div class="l2">FAA MISSION</div><div class="l3">National airspace systems · federal contracts · risk management</div></div>
+    </div>
+    <div class="awards rv">
+      <span class="aw">🏅 FAA Certificate of Appreciation '10</span>
+      <span class="aw">💰 $2.2M certified cost savings '09</span>
+      <span class="aw">📐 CMMI Level 5 Manager Certified '11</span>
+      <span class="aw">🎯 PMI-RMP Risk Training '13</span>
+      <span class="aw">🛠 Systems Engineering Manager Cert '10</span>
+    </div>
+    <p class="toolrow rv">Engineer's toolbox from that era, still loaded: <span class="mono">MATLAB · PSPICE · OrCAD · DOORS · C/C++ · Code V optics · neural networks coursework before it was cool</span></p>
+  </div>
+</section>
 
 <section id="who">
   <div class="wrap">
@@ -220,9 +281,9 @@ footer .mono{color:var(--cyan)}
     <h2 class="rv">One person. Three job descriptions.</h2>
     <p class="lead rv">Most people pick a lane. I run three in parallel, and the trick is that each one makes the others better.</p>
     <div class="trio">
-      <div class="id rv"><div class="ico">⚙️</div><h3>The Engineer</h3><p>I build systems: booking-to-delivery pipelines, automation, demand models, prototypes, static sites deployed by hand. If it has moving parts and a failure mode, I want to design it. This site? Hand-coded, zero frameworks, view-source friendly.</p><div class="bar"></div></div>
-      <div class="id rv"><div class="ico">📈</div><h3>The COO</h3><p>Two companies operated at the executive level. Budgets, forecasting, hiring, vendor contracts, SOPs — the unglamorous machinery that decides whether a business survives contact with growth. I read the fine print and enjoy it.</p><div class="bar"></div></div>
-      <div class="id rv"><div class="ico">🗣️</div><h3>The Human</h3><p>Gregarious is the polite word. I build partnerships with venues, teams, vendors, and government offices because I genuinely like people — and operations only works when both the spreadsheet AND the relationship hold.</p><div class="bar"></div></div>
+      <div class="id rv tilt"><div class="ico">⚙️</div><h3>The Engineer</h3><p>Degreed EE, forged on the FAA mission at Northrop Grumman: requirements, system synthesis, design tradeoffs, risk analysis. These days I build booking pipelines, demand models, prototypes, and this site — hand-coded, zero frameworks, view-source friendly.</p><div class="bar"></div></div>
+      <div class="id rv tilt"><div class="ico">📈</div><h3>The COO</h3><p>Two companies operated at the executive level. Budgets, forecasting, EVM metrics, hiring, vendor contracts, SOPs — the unglamorous machinery that decides whether a business survives contact with growth. I read the fine print and enjoy it.</p><div class="bar"></div></div>
+      <div class="id rv tilt"><div class="ico">🗣️</div><h3>The Human</h3><p>Gregarious is the polite word. I build partnerships with venues, teams, vendors, and government offices because I genuinely like people — and systems only work when both the spreadsheet AND the relationship hold.</p><div class="bar"></div></div>
     </div>
   </div>
 </section>
@@ -244,25 +305,36 @@ footer .mono{color:var(--cyan)}
         <span class="tag">Ops Systems</span><span class="tag">Web Engineering</span><span class="tag">Marketing</span><span class="tag">Partnerships</span>
       </div>
       <div class="node rv">
-        <div class="when">PRIOR · MARYLAND</div>
-        <h3>IPS — Legal &amp; Paralegal Services</h3>
+        <div class="when">PRIOR · GERMANTOWN, MD</div>
+        <h3>Intrepid Paralegal Solutions</h3>
         <div class="role">Chief Operating Officer</div>
         <ul>
-          <li>Directed operations: standardized intake, casework, and delivery processes.</li>
-          <li>Built cross-functional teams and the reporting structures behind them.</li>
-          <li>Partnered with the CEO on financial planning and org strategy.</li>
+          <li>Directed operations: strategic planning, process optimization, and resource allocation with the CEO.</li>
+          <li>Ran performance on engineer's terms — EVM metrics, KPIs, audits, and data analytics on every initiative.</li>
+          <li>Owned risk management, vendor negotiation, and team leadership across the company.</li>
         </ul>
-        <span class="tag">Process Design</span><span class="tag">Team Building</span><span class="tag">Financial Planning</span>
+        <span class="tag">EVM / KPIs</span><span class="tag">Process Design</span><span class="tag">Risk Management</span><span class="tag">Team Building</span>
       </div>
       <div class="node rv">
-        <div class="when">SELECTED VENTURES</div>
-        <h3>Independent Media &amp; Product Work</h3>
-        <div class="role">Founder / Operator</div>
+        <div class="when">2008 → · WASHINGTON, DC</div>
+        <h3>Northrop Grumman → TASC · FAA Mission</h3>
+        <div class="role">Systems Engineer / Project Lead — Federal Contracts</div>
         <ul>
-          <li>Launched video production &amp; live-streaming services — 4K delivery, multi-camera live events, full post pipelines.</li>
-          <li>Take concepts from research and cost modeling through pitch decks and working prototypes.</li>
+          <li>Hired straight out of UMD engineering; led technical staff and vendors on FAA program deliverables.</li>
+          <li>Requirements analysis, concept definition, system synthesis, design tradeoffs, COTS integration, DoDAF compliance.</li>
+          <li>Built WBS structures, lifecycle baselines, and risk management plans; facilitated SE process-improvement workshops.</li>
+          <li>Certified $2.2M in cost savings; recognized with an FAA Certificate of Appreciation for mission contributions.</li>
         </ul>
-        <span class="tag">4K / Live Video</span><span class="tag">Prototyping</span><span class="tag">Cost Modeling</span><span class="tag">Pitch Craft</span>
+        <span class="tag">Systems Engineering</span><span class="tag">FAA / Federal</span><span class="tag">Risk Management</span><span class="tag">CMMI L5</span>
+      </div>
+      <div class="node rv">
+        <div class="when">FOUNDATION · COLLEGE PARK, MD</div>
+        <h3>University of Maryland — A. James Clark School of Engineering</h3>
+        <div class="role">B.S. Electrical Engineering '07 · (A.S. EE, Montgomery College '05)</div>
+        <ul>
+          <li>Optical systems design, wireless communication, power electronics, microelectronics lab, neural networks.</li>
+        </ul>
+        <span class="tag">Electrical Engineering</span><span class="tag">Optics</span><span class="tag">Neural Nets</span>
       </div>
     </div>
   </div>
@@ -288,14 +360,14 @@ footer .mono{color:var(--cyan)}
     <h2 class="rv">Yes, I'm that guy at the party.</h2>
     <p class="lead rv">The one who knows the bartender's name by 9pm and the whole room's by 11. Here's what that looks like professionally:</p>
     <div class="fun">
-      <div class="funcard rv"><h3><span class="e">🤝</span>Partnership whisperer</h3><p>Venues, vendors, government offices, photographers, developers — I've built working relationships with all of them, usually starting from a cold hello.</p></div>
-      <div class="funcard rv"><h3><span class="e">🎤</span>Give me the mic</h3><p>Pitches, team meetings, wedding-day crowd control — comfortable in front of any room, from a two-person sync to a county pitch.</p></div>
-      <div class="funcard rv"><h3><span class="e">🎥</span>Streamer-grade nerd</h3><p>Twitch, YouTube, Discord, OBS — I speak fluent internet and can set up a broadcast rig faster than most people set up a printer.</p></div>
-      <div class="funcard rv"><h3><span class="e">🧠</span>Weaponized curiosity</h3><p>I read traffic-safety datasets and county budgets recreationally. Ask me literally anything about the DMV region and pack a lunch.</p></div>
+      <div class="funcard rv tilt"><h3><span class="e">🤝</span>Partnership whisperer</h3><p>Venues, vendors, government offices, photographers, developers — I've built working relationships with all of them, usually starting from a cold hello.</p></div>
+      <div class="funcard rv tilt"><h3><span class="e">🎤</span>Give me the mic</h3><p>Pitches, team meetings, wedding-day crowd control, a national forum I helped produce in two cities — comfortable in front of any room.</p></div>
+      <div class="funcard rv tilt"><h3><span class="e">🎥</span>Streamer-grade nerd</h3><p>Twitch, YouTube, Discord, OBS — I speak fluent internet and can set up a broadcast rig faster than most people set up a printer.</p></div>
+      <div class="funcard rv tilt"><h3><span class="e">🧠</span>Weaponized curiosity</h3><p>I read traffic-safety datasets and county budgets recreationally. Ask me literally anything about the DMV region and pack a lunch.</p></div>
     </div>
     <div class="coffee rv">
       <h3>☕ The coffee protocol</h3>
-      <p>Best meetings happen over coffee. If you're in the DC metro and want to talk operations, engineering, weddings, streaming, or the thing I can't talk about — first round's on me.</p>
+      <p>Best meetings happen over coffee. If you're in the DC metro and want to talk systems, operations, weddings, streaming, or the thing I can't talk about — first round's on me.</p>
       <a class="btn btn-p" href="mailto:skisaksen@gmail.com?subject=Coffee%3F%20%E2%98%95&body=Sebastian%20%E2%80%94%20saw%20the%20site.%20Let's%20grab%20coffee.%20I%20want%20to%20talk%20about%3A%20">Invoke the protocol →</a>
     </div>
   </div>
@@ -305,7 +377,7 @@ footer .mono{color:var(--cyan)}
   <div class="wrap">
     <div class="kick rv">open channels</div>
     <h2 class="rv">Let's build something.</h2>
-    <p class="lead rv">Open to operations leadership, consulting, partnerships, and good conversations across DC / Maryland / Virginia.</p>
+    <p class="lead rv">Open to operations leadership, systems engineering, consulting, partnerships, and good conversations across DC / Maryland / Virginia.</p>
     <div class="cgrid">
       <div class="ccard rv"><div class="l">Email</div><a href="mailto:skisaksen@gmail.com">skisaksen@gmail.com</a></div>
       <div class="ccard rv"><div class="l">Phone</div><a href="tel:2403935704">240-393-5704</a></div>
@@ -322,7 +394,7 @@ footer .mono{color:var(--cyan)}
 
 <div id="term">
   <div class="bar"><span><b>sebbie@dmv</b>:~$ guest session</span><span class="x" onclick="toggleTerm()">✕ close</span></div>
-  <div class="out" id="tout">Welcome to sebbie-sh v1.0 — type 'help' to begin.
+  <div class="out" id="tout">Welcome to sebbie-sh v2.0 — type 'help' to begin.
 </div>
   <input id="tin" placeholder="type a command…" autocomplete="off">
 </div>
@@ -337,10 +409,10 @@ addEventListener('scroll',()=>{const h=document.documentElement;document.getElem
 /* ---------- custom cursor ---------- */
 const cur=document.getElementById('cur');
 addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';});
-document.querySelectorAll('a,button,.redact').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('hot'));el.addEventListener('mouseleave',()=>cur.classList.remove('hot'));});
+document.querySelectorAll('a,button,.redact,.aw').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('hot'));el.addEventListener('mouseleave',()=>cur.classList.remove('hot'));});
 
 /* ---------- typewriter ---------- */
-const roles=["an engineer.","a COO.","a systems builder.","the guy who knows everyone.","a live-video nerd.","building something secret.","probably free for coffee."];
+const roles=["an engineer.","an electrical engineer (UMD '07).","an FAA-mission systems guy.","a COO. twice.","the guy who knows everyone.","a live-video nerd.","building something secret.","probably free for coffee."];
 const T=document.getElementById('type');let ri=0,ci=0,del=false;
 (function tick(){
   const w=roles[ri];
@@ -351,46 +423,100 @@ const T=document.getElementById('type');let ri=0,ci=0,del=false;
   else{del=false;ri=(ri+1)%roles.length;setTimeout(tick,300);}
 })();
 
-/* ---------- particle network ---------- */
-const cv=document.getElementById('net'),cx=cv.getContext('2d');let P=[],mx=-999,my=-999;
-function sz(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight;P=Array.from({length:Math.min(90,cv.width/14)},()=>({x:Math.random()*cv.width,y:Math.random()*cv.height,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4}));}
-sz();addEventListener('resize',sz);
-cv.parentElement.addEventListener('mousemove',e=>{const r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;});
-(function loop(){
-  cx.clearRect(0,0,cv.width,cv.height);
-  for(const p of P){
-    p.x+=p.vx;p.y+=p.vy;
-    if(p.x<0||p.x>cv.width)p.vx*=-1;if(p.y<0||p.y>cv.height)p.vy*=-1;
-    const dm=Math.hypot(p.x-mx,p.y-my);
-    if(dm<130){p.x+=(p.x-mx)/dm*1.2;p.y+=(p.y-my)/dm*1.2;}
-    cx.fillStyle='rgba(34,211,238,.7)';cx.beginPath();cx.arc(p.x,p.y,1.6,0,7);cx.fill();
+/* ---------- SKY CHART : sectional + live traffic ---------- */
+const sky=document.getElementById('sky'),sx=sky.getContext('2d');
+let W,H,wpts=[],craft=[],sweep=0,mX=-9e3,mY=-9e3;
+const NAMES=["SEBBY","KLARK","GRMMN","UMCPK","SILVR","SPRNG","MOCO","POTMC","DULES","BWIRD","NATNL","FAA01"];
+function skyInit(){
+  W=sky.width=innerWidth;H=sky.height=innerHeight;
+  wpts=NAMES.map((n,i)=>({n,x:(i%4)*W/4+W/8+(Math.sin(i*7)*W/14),y:Math.floor(i/4)*H/3+H/6+(Math.cos(i*5)*H/12)}));
+  craft=Array.from({length:7},(_,i)=>({
+    x:Math.random()*W,y:Math.random()*H,
+    h:Math.random()*6.283,spd:.35+Math.random()*.5,
+    cs:["NGA204","TASC77","UMD007","SAM700","DMV410","GRMN22","SEB240"][i],
+    fl:"FL"+(180+Math.floor(Math.random()*22)*10),trail:[]
+  }));
+}
+skyInit();addEventListener('resize',skyInit);
+addEventListener('mousemove',e=>{mX=e.clientX;mY=e.clientY;});
+function drawChart(){
+  sx.clearRect(0,0,W,H);
+  /* airways */
+  sx.setLineDash([7,9]);sx.lineWidth=1;
+  for(let i=0;i<wpts.length;i++){
+    const a=wpts[i],b=wpts[(i+3)%wpts.length];
+    sx.strokeStyle='rgba(34,211,238,.07)';
+    sx.beginPath();sx.moveTo(a.x,a.y);sx.lineTo(b.x,b.y);sx.stroke();
   }
-  for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++){
-    const a=P[i],b=P[j],d=Math.hypot(a.x-b.x,a.y-b.y);
-    if(d<120){cx.strokeStyle=`rgba(34,211,238,${(1-d/120)*.25})`;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke();}
+  sx.setLineDash([]);
+  /* waypoints */
+  for(const w of wpts){
+    sx.strokeStyle='rgba(34,211,238,.22)';sx.lineWidth=1.2;
+    sx.beginPath();sx.moveTo(w.x,w.y-7);sx.lineTo(w.x+6,w.y+5);sx.lineTo(w.x-6,w.y+5);sx.closePath();sx.stroke();
+    sx.fillStyle='rgba(143,163,196,.30)';sx.font='10px JetBrains Mono,monospace';
+    sx.fillText(w.n,w.x+10,w.y+4);
   }
-  requestAnimationFrame(loop);
-})();
+  /* compass rose */
+  const cxp=W*.82,cyp=H*.24,R=Math.min(W,H)*.13;
+  sx.strokeStyle='rgba(34,211,238,.12)';sx.lineWidth=1;
+  for(const r of[R,R*.72]){sx.beginPath();sx.arc(cxp,cyp,r,0,6.283);sx.stroke();}
+  for(let d=0;d<360;d+=30){
+    const a=d*Math.PI/180;
+    sx.beginPath();sx.moveTo(cxp+Math.cos(a)*R,cyp+Math.sin(a)*R);sx.lineTo(cxp+Math.cos(a)*(R-8),cyp+Math.sin(a)*(R-8));sx.stroke();
+    sx.fillStyle='rgba(143,163,196,.22)';sx.font='9px JetBrains Mono,monospace';
+    sx.fillText(String((d+90)%360).padStart(3,'0'),cxp+Math.cos(a)*(R+14)-8,cyp+Math.sin(a)*(R+14)+3);
+  }
+  /* radar sweep */
+  sweep+=.012;
+  const g=sx.createConicGradient?sx.createConicGradient(sweep,cxp,cyp):null;
+  if(g){g.addColorStop(0,'rgba(34,211,238,.16)');g.addColorStop(.08,'rgba(34,211,238,0)');g.addColorStop(1,'rgba(34,211,238,0)');
+    sx.fillStyle=g;sx.beginPath();sx.moveTo(cxp,cyp);sx.arc(cxp,cyp,R,0,6.283);sx.fill();}
+  /* aircraft */
+  for(const c of craft){
+    c.h+= (Math.random()-.5)*.012;
+    const dm=Math.hypot(c.x-mX,c.y-mY);
+    if(dm<120){c.h+=.05*Math.sign((c.x-mX)*Math.sin(c.h)-(c.y-mY)*Math.cos(c.h)||1);}
+    c.x+=Math.cos(c.h)*c.spd;c.y+=Math.sin(c.h)*c.spd;
+    if(c.x<-40)c.x=W+40;if(c.x>W+40)c.x=-40;if(c.y<-40)c.y=H+40;if(c.y>H+40)c.y=-40;
+    c.trail.push([c.x,c.y]);if(c.trail.length>26)c.trail.shift();
+    for(let i=0;i<c.trail.length;i++){sx.fillStyle=`rgba(34,211,238,${i/c.trail.length*.16})`;sx.fillRect(c.trail[i][0]-1,c.trail[i][1]-1,2,2);}
+    sx.save();sx.translate(c.x,c.y);sx.rotate(c.h+Math.PI/4);
+    sx.strokeStyle='rgba(251,191,36,.75)';sx.lineWidth=1.4;sx.strokeRect(-4,-4,8,8);sx.restore();
+    sx.strokeStyle='rgba(251,191,36,.4)';sx.beginPath();sx.moveTo(c.x,c.y);sx.lineTo(c.x+Math.cos(c.h)*22,c.y+Math.sin(c.h)*22);sx.stroke();
+    sx.fillStyle='rgba(232,238,251,.34)';sx.font='10px JetBrains Mono,monospace';
+    sx.fillText(c.cs,c.x+9,c.y-9);sx.fillStyle='rgba(143,163,196,.26)';sx.fillText(c.fl,c.x+9,c.y+2);
+  }
+  requestAnimationFrame(drawChart);
+}
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches)drawChart();
+
+/* ---------- hero 3D parallax ---------- */
+const hi=document.getElementById('heroInner');
+document.querySelector('.hero').addEventListener('mousemove',e=>{
+  const r=hi.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+  hi.style.transform=`rotateY(${x*3.5}deg) rotateX(${y*-3.5}deg)`;
+});
+document.querySelector('.hero').addEventListener('mouseleave',()=>hi.style.transform='');
 
 /* ---------- scroll reveal ---------- */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
-/* ---------- counters ---------- */
+/* ---------- counters (int + decimal) ---------- */
 const co=new IntersectionObserver(es=>es.forEach(e=>{
   if(!e.isIntersecting)return;co.unobserve(e.target);
-  const el=e.target,n=+el.dataset.n,suf=el.dataset.suf||'';let c=0;
-  const st=Math.max(1,Math.round(n/40));
-  (function up(){c=Math.min(n,c+st);el.textContent=c+suf;if(c<n)setTimeout(up,30);})();
+  const el=e.target,n=parseFloat(el.dataset.n),suf=el.dataset.suf||'',pre=el.dataset.pre||'',dec=+(el.dataset.dec||0);
+  let c=0;const st=n/40;
+  (function up(){c=Math.min(n,c+st);el.textContent=pre+c.toFixed(dec)+suf;if(c<n)setTimeout(up,30);})();
 }),{threshold:.6});
 document.querySelectorAll('.stat b').forEach(el=>co.observe(el));
 
-/* ---------- card tilt + spotlight ---------- */
-document.querySelectorAll('.id').forEach(c=>{
+/* ---------- 3D tilt + spotlight (all .tilt cards) ---------- */
+document.querySelectorAll('.tilt').forEach(c=>{
   c.addEventListener('mousemove',e=>{
     const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
     c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');
-    c.style.transform=`rotateX(${(y-r.height/2)/-22}deg) rotateY(${(x-r.width/2)/22}deg)`;
+    c.style.transform=`rotateX(${(y-r.height/2)/-20}deg) rotateY(${(x-r.width/2)/20}deg) translateZ(6px)`;
   });
   c.addEventListener('mouseleave',()=>c.style.transform='');
 });
@@ -403,18 +529,21 @@ const term=document.getElementById('term'),tout=document.getElementById('tout'),
 function toggleTerm(){term.classList.toggle('open');if(term.classList.contains('open'))tin.focus();}
 addEventListener('keydown',e=>{if(e.key==='`'&&document.activeElement!==tin){e.preventDefault();toggleTerm();}});
 const CMDS={
-  help:"commands: whoami · work · stealth · coffee · skills · social · konami · clear · exit",
-  whoami:"Sebastian 'Sebbie' Isaksen — engineer of operations, COO ×2,\nprofessional extrovert. Silver Spring, MD. Runs on coffee and curiosity.",
-  work:"NOW    Samshots (COO) — 700+ couples, ops + web + marketing\nPRIOR  IPS (COO) — legal services operations\nALWAYS media production, prototypes, cost models",
+  help:"commands: whoami · faa · edu · work · awards · stealth · coffee · skills · social · konami · clear · exit",
+  whoami:"Sebastian 'Sebbie' Isaksen — electrical engineer (UMD '07),\nex-Northrop Grumman on the FAA mission, COO ×2,\nprofessional extrovert. Silver Spring, MD. Runs on coffee.",
+  faa:"2008: hired straight out of UMD Clark Engineering by\nNorthrop Grumman (→ TASC). Systems engineering on the\nFAA's national airspace: requirements, design tradeoffs,\nCOTS, DoDAF, risk. Certified $2.2M cost savings.\nFAA Certificate of Appreciation, 2010. ✈",
+  edu:"B.S. Electrical Engineering — Univ. of Maryland,\nA. James Clark School of Engineering ('07)\nA.S. EE — Montgomery College ('05)\ncoursework: optics, wireless, power electronics,\nneural networks (before it was cool)",
+  work:"2008→  Northrop Grumman/TASC — FAA mission (systems eng)\nPRIOR  Intrepid Paralegal Solutions (COO) — EVM-driven ops\nNOW    Samshots (COO) — 700+ couples, ops + web + marketing\nALWAYS media production, prototypes, cost models",
+  awards:"🏅 FAA Certificate of Appreciation (2010)\n💰 $2.2M certified cost savings (2009)\n📐 CMMI Level 5 Manager Certified (2011)\n🎯 PMI-RMP training (2013)\n🛠 Systems Engineering Manager Cert (2010)",
   stealth:"ACCESS DENIED.\n...\nokay fine: public-safety program, DMV region, in stealth.\nfilings pending. that's all you get. buy me coffee and\nI'll say the same thing but with more enthusiasm.",
   coffee:"☕ protocol initiated → skisaksen@gmail.com, subject 'Coffee?'\nfirst round's on me if you're in the DC metro.",
-  skills:"ops-systems ████████████ 96%\nfinancial-modeling ██████████ 90%\npeople-skills █████████████ 110% (uncapped)\nvideo-production ███████████ 92%\nknowing-a-guy ████████████ 99%",
+  skills:"systems-engineering ████████████ 95%\nops-systems ████████████ 96%\nfinancial-modeling ██████████ 90%\npeople-skills █████████████ 110% (uncapped)\nvideo-production ███████████ 92%\nMATLAB/PSPICE/DOORS ████████ 84% (vintage, still runs)\nknowing-a-guy ████████████ 99%",
   social:"instagram/twitch/youtube/discord: fluent.\nreal life: dangerously fluent.",
   konami:"↑ ↑ ↓ ↓ ← → ← → B A — you know what to do.",
   clear:"__CLEAR__",
   exit:"__EXIT__",
-  sudo:"nice try. this is MY website.",
-  ls:"projects/  spreadsheets/  secrets/  coffee.sh",
+  sudo:"nice try. this is MY airspace.",
+  ls:"projects/  spreadsheets/  flightplans/  secrets/  coffee.sh",
   "cat secrets":"permission denied (and honestly, respect the hustle)"
 };
 tin.addEventListener('keydown',e=>{
